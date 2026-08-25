@@ -1,0 +1,76 @@
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+
+# User-specific files
+.Ruserdata
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# R Environment Variables
+.Renviron
+
+#mac finder
+.DS_Store
+
+# Quarto
+/.quarto/
+*_files/
+*.quarto_ipynb
+
+# Rendered worksheets (students commit the .qmd, not the output)
+*.html
+
+# Data downloaded by worksheets at runtime
+/sotu_files/
+/txt/
+/TheAmericanCity/
+/data/
+*.zip
+
+# ---------------------------------------------------------------------------
+# PROGRESSIVE RELEASE
+# Worksheets listed here stay on your machine and are NOT pushed to GitHub.
+# To release one, delete its line, then commit and push:
+#     git add 2-DataStructures.qmd
+#     git commit -m "Release worksheet 2"
+#     git push
+# Students get it with:  git pull upstream main
+# ---------------------------------------------------------------------------
+2-DataStructures.qmd
+3-Loops-Conditionals-Functions.qmd
+4-BasicDataManipulation.qmd
+5-AdvancedDataManipulation.qmd
+6-DataVisualization.qmd
+7-ExploratoryDataAnalysis.qmd
+8-TextAnalysis.qmd
+9-TopicModeling.qmd
+10-Mapping.qmd
