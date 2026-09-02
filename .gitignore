@@ -39,6 +39,7 @@ vignettes/*.pdf
 .Renviron
 
 #mac finder
+__MACOSX/
 .DS_Store
 
 # Quarto
@@ -49,12 +50,14 @@ vignettes/*.pdf
 # Rendered worksheets (students commit the .qmd, not the output)
 *.html
 
-# Data downloaded by worksheets at runtime
+# Corpora that worksheets download at runtime -- these are NOT committed.
+# Note: the data/ folder IS committed; it holds the CSVs and NHGIS extracts
+# that worksheets 5, 6, 8, 9 and 10 read from disk.
 /sotu_files/
 /txt/
 /TheAmericanCity/
-/data/
-*.zip
+/MindAndBody.zip
+/AmCity.zip
 
 # ---------------------------------------------------------------------------
 # PROGRESSIVE RELEASE

@@ -8,7 +8,6 @@ format:
     toc: true
     toc-depth: 3
     embed-resources: true
-editor: visual
 ---
 
 _This is the first in a series of worksheets for HIST 446 at Ball State University. The goal of these worksheets is simple: practice, practice, practice. The worksheet introduces concepts and techniques and includes prompts for you to practice in this interactive document. When you are finished, you should change the author name (above), commit your changes, push to GitHub, and submit the link to your worksheet repository on Canvas. Don't forget to commit your changes as you go - you should make multiple commits as you work through the worksheet, not just one at the end. Also, remember to update your learning log in the `logs/` folder of your repository as you work through the assignment._
@@ -35,13 +34,20 @@ Numbers can be used to do arithmetic.
 ```
 
 (@) You try, multiple two numbers. 
+``` {r}
 
+
+```
 
 (@) Can you multiply two numbers and then divide by the result? 
+``` {r}
+
+
+```
 
 The next type of value is a **string**. Strings are lines of text. Sometimes these are referred to as character vectors. To create a string, you add text between two quotation marks. For example: 
 ```{r}
-"Go Tigers"
+"Go Cardinals"
 ```
 
 (@) Try to create your own string.
@@ -122,36 +128,34 @@ Values are great but they are made so much more powerful when combined with **Va
 ```{r}
 x <- 5
 ```
+
 `<-` is known as an assignment operator. Technically, you could use `=:` here too but it is considered bad practice and can cause complicated issues when you write more advanced code. So its important to stick with `<-` whenever you are coding in R. 
 
 I can also add a string or character vector to a variable. 
 ```{r}
-x <- "Go Tigers!"
+x <- "Go Cardinals!"
 ```
 
 Variable names can be almost anything. 
 ```{r}
 MyFavoriteNumber <- 25
 ```
+
 Variable or object names must start with a letter, and can only contain letters, numbers, `_`, and `.`. You want your object names to be descriptive, so you’ll need a convention for multiple words. People do it different ways. I tend to use periods but there are several options: 
 
-```
 i_use_snake_case 
 otherPeopleUseCamelCase 
 some.people.use.periods 
 And_aFew.People_RENOUNCEconvention
-```
 
 Whatever you prefer, be consistent and your future self will thank you when your code gets more complex. 
 
 (@) You try, create a variable and assign it a number: 
-
 ```{r}
 
 ```
 
 (@) Can you assign a string to a variable?
-
 ```{r}
 
 ```
@@ -201,19 +205,23 @@ If we have a lot of code and rely on just variables, we're going to have a lot o
 myvalue <- "George Washington"
 myvalue
 ```
+
 In this instance "George Washington" is the only item in the variable myvalue. But we could add more. To do that we use the `c()` function which combines values into a vector. 
 ```{r}
 myvalue <- c("George Washington", "Franklin Roosevelt", "John Adams")
 myvalue
 ```
+
 You'll notice that the output still only shows `[1]` but that doesn't mean there is only one item in the list. It simply means George Washington is the first. If we use `length()` we can determine the number of items in this vector list. 
 ```{r}
 length(myvalue)
 ```
+
 We could get the value of the 2nd or 3rd item in that list like this: 
 ```{r}
 myvalue[2]
 ```
+
 We could also create a vector of numbers:
 ```{r}
 my.numbers <- c(2, 4, 6, 8)
@@ -223,6 +231,7 @@ And we could then do calculations based on these values:
 ```{r}
 my.numbers * 2
 ```
+
 (@) Explain in a few sentences, what happened in the code above?
 
 >
@@ -231,6 +240,7 @@ Lets try something slightly different.
 ```{r}
 my.numbers[3] * 2
 ```
+
 (@) Explain in a few sentences, what happened in the code above? 
 
 >
@@ -310,6 +320,7 @@ y = 1,
 z = x * 2 + y
 )
 ```
+
 What is going on here? Each line within this function (x,y,z) creates a new column and determines the values in each row. So the first line creates five rows with values sequentially from 1 to 5. The second column contains only the value 1 in all five rows. 
 
 (@) What is going on in row z? Can you explain the logic here?
@@ -319,25 +330,7 @@ What is going on here? Each line within this function (x,y,z) creates a new colu
 
 ## Loading Dataframes from Packages
 
-Lets also install the data package for our class. This package contains a variety of historical datasets that you can use to complete your assignments this semester. However, this package is not on CRAN. That's okay -- we can still install it from GitHub. To do that we need a package that knows how to install *other* packages from GitHub. We'll use `pak`.
-
-First, install `pak` by running this in your **console** (not in this document):
-
-```
-install.packages("pak")
-```
-
-Our class's package is called `DigitalMethodsData` and it's hosted on [GitHub](https://github.com/lukeave/DigitalMethodsData). Now that you have `pak`, install it by running this in your console:
-
-```
-pak::pak("lukeave/DigitalMethodsData")
-```
-
-The `user/repository` format is how you point at a package on GitHub.
-
-> **If you get an error that says `HTTP error 401. Bad credentials`:** R has found an expired GitHub token saved on your computer. Run `Sys.unsetenv("GITHUB_PAT")` in your console and try the install again. This trips up a lot of people and has nothing to do with your code.
-
-After installing the package, we should load it: 
+Our class's package is called `DigitalMethodsData`. This package isn't on CRAN — it lives on [GitHub](https://github.com/lukeave/DigitalMethodsData), which is where a lot of research software does. Normally you'd install it with a helper package like pak. But you already have it: ``renv::restore()`` read ``renv.lock``, saw the GitHub entry, and installed the package by pointing it to the commit it was first built on. That's the point of the lockfile. Let's just confirm it's there.
 ```{r}
 library(DigitalMethodsData)
 ```
@@ -351,7 +344,6 @@ For demonstration purposes we'll use the `gayguides` data here. Pull up the help
 >
 
 To use a dataset included in this package we first need to load it. We can do so like this:
-
 ```{r}
 data(gayguides)
 ```
@@ -366,6 +358,7 @@ Let's now look at our data. You can use the `head()` function to return the firs
 ```{r}
 head(gayguides)
 ```
+
 That gives us the first 6 rows of data. Its really useful if you just want to peak into the dataset but don't want to print out all 60k+ rows.
 
 (@) The default is to print six rows of data. Can you modify the above code to print out the first 10 rows? 
@@ -386,12 +379,14 @@ The `str()` function is another very useful function for understanding a dataset
 ```{r}
 str(gayguides)
 ```
+
 There is a ton of useful info here. First, we see that this is a data.frame and that it has 60698 obs. of  14 variables. Second, we see the names of all the variables (columns) in the dataset. Lastly, it shows us what type of data is contained in each variable. For example, the variable `state` is a chr or character vector while `Year` (note the capitalization) is numeric. 
 
 The `$` operator allows us to get a segment of the data. 
 ```{r}
 head(gayguides$title)
 ```
+
 While that's useful, this particular dataset happens to be sorted by title. So the first rows are all labeled some version of B.A. beach. That's not very useful. What if we want to see the 500th item in this list? Well, we can pull that up like this: 
 ```{r}
 gayguides$title[500]
@@ -425,5 +420,4 @@ gayguides$title[500]
 
 
 
-CONGRATS! You've completed your first worksheet for HIST 446. That wasn't so bad, right? 
-
+CONGRATS! You've completed your first worksheet for HIST 446. That wasn't so bad, right?
