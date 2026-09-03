@@ -34,16 +34,9 @@ Numbers can be used to do arithmetic.
 ```
 
 (@) You try, multiple two numbers. 
-``` {r}
 
-
-```
 
 (@) Can you multiply two numbers and then divide by the result? 
-``` {r}
-
-
-```
 
 The next type of value is a **string**. Strings are lines of text. Sometimes these are referred to as character vectors. To create a string, you add text between two quotation marks. For example: 
 ```{r}
@@ -274,15 +267,17 @@ How would you know what options are available for each function in R? Every func
 
 We can ask R to pull up the documentation like this:
 ```{r}
+#| eval: false
 ?round()
 ```
 
 (@) Now you try, find the documentation for the function  `signif()`.
 ```{r}
+#| eval: false
 
 ```
 
-In real life, you typically you wouldn't want to store this code in your script file. You probably don't need to pull up the documentation for the function every time you run that piece of code. But for the purposes of this worksheet we're adding it to our `.qmd` document. 
+In real life, you typically you wouldn't want to store this code in your script file. You probably don't need to pull up the documentation for the function every time you run that piece of code. But for the purposes of this worksheet we're adding it to our `.qmd` document. Notice that I included ``#| eval: false`` in both code chunks above -- this is what stops the chunks from executing every time you render your worksheet as an HTML file.
 
 (@) Use the console to find the documentation for `floor()`? Try it and then tell me, what does that function do? 
 
