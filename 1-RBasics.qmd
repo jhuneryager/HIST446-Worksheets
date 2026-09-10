@@ -383,7 +383,7 @@ tail(gayguides)
 
 (@) Reflect on the previous two prompts. How did you figure these out? 
 
-> I went back to earlier in the assignment to figure these out. 
+> I went back to earlier in the assignment to figure these out. I went to the documentation of head() and found the information I needed.
 
 The `str()` function is another very useful function for understanding a dataset. It compactly displays the internal structure of an R object. 
 ```{r}
@@ -404,10 +404,11 @@ gayguides$title[500]
 
 (@) Break this down. Whats going on here? What do each of the elements of this code mean? (gayguides, $, title, and [500]) 
 
->
+>So what is happening here is gayguides tells the system what data set we are using, $ shows we are looking for a certain segment, title tells it what row we want, and 500 tells it what row we are looking at.
 
 (@) The Year variable contains the year (numeric) of each entry. Can you find the earliest year in this dataset? (Using code, don't cheat and use the documentation!)
 ```{r}
+gayguides$Year[
 
 ```
 
