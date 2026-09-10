@@ -325,7 +325,14 @@ What is going on here? Each line within this function (x,y,z) creates a new colu
 
 ## Loading Dataframes from Packages
 
-Our class's package is called `DigitalMethodsData`. This package isn't on CRAN — it lives on [GitHub](https://github.com/lukeave/DigitalMethodsData), which is where a lot of research software does. Normally you'd install it with a helper package like pak. But you already have it: ``renv::restore()`` read ``renv.lock``, saw the GitHub entry, and installed the package by pointing it to the commit it was first built on. That's the point of the lockfile. Let's just confirm it's there.
+Our class's package is called `DigitalMethodsData`. This package isn't on CRAN — it lives on [GitHub](https://github.com/lukeave/DigitalMethodsData), which is where a lot of research software does. That means `install.packages()` won't find it, because `install.packages()` only knows how to look at CRAN. To install from GitHub you need a helper package called `remotes`. Run these two lines in your console:
+
+```r
+install.packages("remotes")
+remotes::install_github("lukeave/DigitalMethodsData")
+```
+
+If you already have the package, the second line will tell you it's up to date and skip it. Now let's confirm it loads.
 ```{r}
 library(DigitalMethodsData)
 ```

@@ -16,25 +16,25 @@ You need both. R is the language; RStudio is the program you'll use to edit your
 
 Install R first, then RStudio.
 
-### 2. Clone this repository
+### 2. Fork and clone this repository
 
-In RStudio: **File → New Project → Version Control → Git**, and paste the repository URL.
+First install [GitHub Desktop](https://desktop.github.com/). You'll use it alongside RStudio: GitHub Desktop handles moving your work between your computer and GitHub, and RStudio is where you write code.
 
-If you haven't done so yet, go ahead and also download GitHub Desktop to your machine. This is not a necessity, but it will help you understand how Git and version control works to have it alongside your RStudio environment.
+1. At the top right of this page, click **Fork**. This makes your own copy of the repository under your GitHub account. Your copy is where you'll do all your work.
+2. On your fork's page, click the green **Code** button, then **Open with GitHub Desktop**.
+3. When GitHub Desktop asks where to put the folder, choose `Desktop/HIST-446/`.
+4. GitHub Desktop will ask how you plan to use the fork. Choose **To contribute to the parent repository**. This one matters — it's what lets you receive new worksheets later in the semester.
+5. Now open RStudio and go to **File → New Project → Existing Directory**, then select `Desktop/HIST-446/HIST446-Worksheets/`.
+
+Step 5 is what makes RStudio treat the folder as a project. Don't skip it, and from now on always open the worksheets by opening that project rather than opening the `.qmd` files directly.
 
 ### 3. Install the packages
 
-This project uses [`renv`](https://rstudio.github.io/renv/) to record the exact version of every package the worksheets need. This means the code will still run the same way next semester and across different machines.
+Worksheet 2 opens with a short section called **Before You Begin: Installing Your Packages**. Open `2-DataStructures.qmd`, and run that chunk in your console. It installs everything the worksheets need, and it only installs what you are missing, so it is safe to run more than once.
 
-When you first open the project, run this in the console:
+It will take a few minutes the first time. Good moment for a short coffee break.
 
-```r
-renv::restore()
-```
-
-This reads `renv.lock` and installs everything. It will take a while the first time, but you only have to do it once. Good moment for a short coffee break.
-
-If `renv::restore()` reports that `renv` itself isn't installed, run `install.packages("renv")` first, then try again.
+If R asks whether to install from sources a package which needs compilation, answer `n` for no.
 
 ### 4. Check that it worked
 
@@ -46,6 +46,26 @@ head(gayguides)
 ```
 
 If you see a table of data, you're good to go!
+
+---
+
+## Getting New Worksheets
+
+Worksheets are released over the course of the semester, so new ones appear here after you have already forked and cloned. Your copy does not update itself. When I announce a new worksheet:
+
+1. Open **GitHub Desktop** and make sure the HIST446-Worksheets repository is selected at the top left.
+2. Click **Fetch origin**.
+3. Go to **Branch → Update from upstream/main**.
+4. Click **Push origin** to bring your own copy on GitHub up to date too.
+
+The new worksheet is now in your folder. Switch to RStudio and you'll see it appear in the Files pane — there's nothing to pull on the RStudio side, since GitHub Desktop already brought the files down.
+
+**Your own work is safe.** This only adds the new files. Everything you have written stays exactly as it was, and none of your commits are lost.
+
+Two things that occasionally come up:
+
+- **No "Update from upstream/main" in the Branch menu?** That means the fork wasn't set up to track the parent repository. Let me know and we'll fix it in a minute — don't re-clone.
+- **Save your open files first.** If you have unsaved edits in RStudio, save them before step 3 so nothing is half-written while the files update.
 
 ---
 
@@ -97,7 +117,7 @@ You may use AI tools in this course. What I'm asking is that you show your work:
 
 ## Data
 
-Most worksheets use the `DigitalMethodsData` package, which `renv::restore()` installs for you. A few download text corpora from a separate repository; those chunks are marked and the downloaded files are gitignored, so don't worry if they appear in your working directory.
+Most worksheets use the `DigitalMethodsData` package, which the setup chunk in Worksheet 2 installs for you. A few download text corpora from a separate repository; those chunks are marked and the downloaded files are gitignored, so don't worry if they appear in your working directory.
 
 ---
 
