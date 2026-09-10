@@ -103,12 +103,12 @@ Showed me how to download packages individually in case I run into these issues 
 ## Reflection
 
 **What I understand well now:**
-[What clicked for you this week?]
+Figuring out how to utilize the code after being given the directions on how to use it.
 
 **What I'm still confused about:**
-[What remains unclear? What questions do you have?]
+How to figure out what command to use for specific situations.
 
 **Connection to historical research:**
-[How might this week's skills apply to your research?]
+It can help to make data more digestible and easy to go through for research purposes.
 
 
