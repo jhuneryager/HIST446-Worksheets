@@ -60,12 +60,12 @@ paste("Hello", "Ball State Students")
 
 (@) Try it, add two strings together like the above example. 
 ```{r}
-
+paste("Yay", "Homework is Done")
 ```
 
 (@) Can you explain what happened in 2-3 sentences? 
 
-> 
+> When I used the word paste it connected the two strings together. So now I know that method can be used in the future.
 
 The last type are **logical** values like `TRUE` and `FALSE`. (Note that these are all caps.)
 
@@ -105,16 +105,21 @@ Logical Operators allow you to combine or change the results of comparisons.
 ```
 (@) Explain, what does the code on each line above do? 
 
->
+> 5 is equal to 10
+3 is less than 4
+5 is not equal to 10
+5 is not equal to 5
+3 is equal to 4 or 3
+3 is not equal to 4 and 3 is not equal to 5
 
 (@) Create your own comparison. 
 ```{r}
-
+5==12
 ```
 
 (@) Can you write code that checks if a year is between 1970 AND 1980? 
 ```{r}
-
+1970<=1992 & 1992<=1980
 ```
 
 ---
