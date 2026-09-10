@@ -72,32 +72,31 @@ I think that I learned that everything might not be a problem
 
 ---
 
-### Challenge 3 (Optional): [Brief descriptive title]
+### Challenge 3 (Optional):Trouble with Digital Methods Data
 
 **What I was trying to do:**
-[Describe the task or problem]
+I was trying to get the library to identify the digital methods data.
 
 **What went wrong:**
-[Describe the error, confusion, or roadblock]
+It was telling me that the Digital Methods Data package didn't exist.
 
 **My problem-solving process:**
-1. [First attempt - what you did and what happened]
-2. [Second attempt - what you did and what happened]
-3. [Additional attempts if relevant]
+1. First Attempt: Tried to render again. It didn't work as to be expected.
+2. Second Attempt: Reached out to Luc. Emailed back and forth for help.
 
 **Resources I consulted:**
 - [ ] Documentation for [package/function]
 - [ ] Stack Overflow: [describe what you searched for]
 - [ ] Course materials: [which ones]
 - [ ] Class discussion (Canvas, Slack, or in person)
-- [ ] Office hours
+- [x] Office hours
 - [ ] Other: [describe]
 
 **Resolution:**
-[What ultimately worked or where you're still stuck]
+Luc was able to help me solve the issue.
 
 **What I learned:**
-[What did this teach you about the concept, the tool, or problem-solving?]
+Showed me how to download packages individually in case I run into these issues in the future.
 
 ---
 
