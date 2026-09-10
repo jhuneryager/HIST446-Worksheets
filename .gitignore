@@ -66,9 +66,9 @@ __MACOSX/
 #     git add 2-DataStructures.qmd
 #     git commit -m "Release worksheet 2"
 #     git push
-# Students get it with:  git pull upstream main
+# Students get it in GitHub Desktop: Fetch origin, then
+# Branch -> Update from upstream/main, then Push origin.
 # ---------------------------------------------------------------------------
-2-DataStructures.qmd
 3-Loops-Conditionals-Functions.qmd
 4-BasicDataManipulation.qmd
 5-AdvancedDataManipulation.qmd
