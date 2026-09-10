@@ -242,7 +242,7 @@ my.numbers * 2
 
 (@) Explain in a few sentences, what happened in the code above?
 
->
+>We were able to make a variable that housed multiple numbers. Then we were able to multiply all of the numbers by two.
 
 Lets try something slightly different. 
 ```{r}
@@ -251,11 +251,11 @@ my.numbers[3] * 2
 
 (@) Explain in a few sentences, what happened in the code above? 
 
->
+>In the code abobe we used the same vector as before. But instead of multiplying all of the numbers by 2 we only multiplied the third number in the set.
 
 (@) You try, create a list of five items and store it in a descriptive variable. 
 ```{r}
-
+the_years<-c(2005,2006,2007,2008,2009)
 ```
 
 
