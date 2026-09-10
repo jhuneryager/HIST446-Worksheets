@@ -351,7 +351,7 @@ Run `help(package="DigitalMethodsData")` in your console to pull up a list of da
 
 For demonstration purposes we'll use the `gayguides` data here. Pull up the help documentation for this dataset. What does the documentation tell you abou the scope of this dataset? 
 
->
+>The scope is the address book of a man over the course of 20 years. It was also last updated in 2022.
 
 To use a dataset included in this package we first need to load it. We can do so like this:
 ```{r}
