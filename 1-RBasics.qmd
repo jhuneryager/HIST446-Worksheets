@@ -289,7 +289,7 @@ We can ask R to pull up the documentation like this:
 (@) Now you try, find the documentation for the function  `signif()`.
 ```{r}
 #| eval: false
-
+?signif()
 ```
 
 In real life, you typically you wouldn't want to store this code in your script file. You probably don't need to pull up the documentation for the function every time you run that piece of code. But for the purposes of this worksheet we're adding it to our `.qmd` document. Notice that I included ``#| eval: false`` in both code chunks above -- this is what stops the chunks from executing every time you render your worksheet as an HTML file.

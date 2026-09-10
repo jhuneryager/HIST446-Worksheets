@@ -44,32 +44,31 @@ It taught me more in depth how to do comparisons in RStudio
 
 ---
 
-### Challenge 2: [Brief descriptive title]
+### Challenge 2: Descriptions
 
 **What I was trying to do:**
-[Describe the task or problem]
+Find the description of signif()
 
 **What went wrong:**
-[Describe the error, confusion, or roadblock]
+I couldn't get the rounding of numbers description to go away.
 
 **My problem-solving process:**
-1. [First attempt - what you did and what happened]
-2. [Second attempt - what you did and what happened]
-3. [Additional attempts if relevant]
+1. First Attmept: Exit out of previous documentation. It didn't work.
+2. Second Attempt: Read through the Description. I wanted to see if the right thing was popping up.
 
 **Resources I consulted:**
-- [ ] Documentation for [package/function]
+- [x] Documentation for Rounding of Numbers
 - [ ] Stack Overflow: [describe what you searched for]
 - [ ] Course materials: [which ones]
 - [ ] Class discussion (Canvas, Slack, or in person)
 - [ ] Office hours
-- [ ] Other: [describe]
+- [x] Other: Trial and Error
 
 **Resolution:**
-[What ultimately worked or where you're still stuck]
+I think that I have the correct thing popping up but I'm not sure.
 
 **What I learned:**
-[What did this teach you about the concept, the tool, or problem-solving?]
+I think that I learned that everything might not be a problem
 
 ---
 
