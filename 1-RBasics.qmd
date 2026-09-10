@@ -296,7 +296,7 @@ In real life, you typically you wouldn't want to store this code in your script 
 
 (@) Use the console to find the documentation for `floor()`? Try it and then tell me, what does that function do? 
 
->
+> It takes a single numeric argument x and returns a numeric vector containing largest integers not greater than the corresponding elements of x
 
 ### Data Frames & Packages
 
