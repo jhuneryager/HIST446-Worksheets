@@ -408,25 +408,27 @@ gayguides$title[500]
 
 (@) The Year variable contains the year (numeric) of each entry. Can you find the earliest year in this dataset? (Using code, don't cheat and use the documentation!)
 ```{r}
-gayguides$Year[
+min(gayguides$Year)
 
 ```
 
 
 (@) How about the latest year? 
 ```{r}
-
+max(gayguides$Year)
 ```
 
 
 (@) Add another dataset from `DigitalMethodsData`. How many observations are included in this dataset? Run through some of the examples from above to learn about the dataset.
 ```{r}
-
+head(judges)
+str(judges)
+head(judges$FirstName)
 ```
 
 (@) What did you learn about the dataset? What can you tell me about it? 
 
->
+> I learned information about the federal judges of the US
 
 
 
