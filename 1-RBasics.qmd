@@ -428,9 +428,7 @@ head(judges$FirstName)
 
 (@) What did you learn about the dataset? What can you tell me about it? 
 
-> I learned information about the federal judges of the US
-
-
+> I learned information about the federal judges of the US. It has all of the names of judges, the years they were in office, and a bunch of other facts about the judges.
 
 
 CONGRATS! You've completed your first worksheet for HIST 446. That wasn't so bad, right?
