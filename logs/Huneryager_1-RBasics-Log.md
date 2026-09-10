@@ -1,22 +1,22 @@
-# Week [X] Learning Log
+# Week [3] Learning Log
 
-**Student Name:** [Your name]  
-**Week of:** [Date range]  
-**Topic(s):** [e.g., "Data Structures and Loops"]
+**Student Name:** Jordan Huneryager  
+**Week of:**September 7-September 13  
+**Topic(s):**Basics
 
 ---
 
 ## What I Worked On This Week
 
 **Assignment(s):**
-- [ ] Worksheet [#]
+- [x] Worksheet [#1]
 - [ ] Other: [describe]
 
 ---
 
 ## Challenges & Problem-Solving
 
-### Challenge 1: [Brief descriptive title]
+### Challenge 1: Finding if a year is between 1970 and 1980
 
 **What I was trying to do:**
 [Describe the task or problem]
