@@ -19,15 +19,14 @@
 ### Challenge 1: Finding if a year is between 1970 and 1980
 
 **What I was trying to do:**
-[Describe the task or problem]
+Answer the question about comparing the two years.
 
 **What went wrong:**
-[Describe the error, confusion, or roadblock]
+I didn't know exactly how to put the phrase into R studio.
 
 **My problem-solving process:**
-1. [First attempt - what you did and what happened]
-2. [Second attempt - what you did and what happened]
-3. [Additional attempts if relevant]
+1. First Attempt: Trial and Error. Could not figure out how to actually do it.
+2. Second Attempt: Google. 
 
 **Resources I consulted:**
 - [ ] Documentation for [package/function]
@@ -35,13 +34,13 @@
 - [ ] Course materials: [which ones]
 - [ ] Class discussion (Canvas, Slack, or in person)
 - [ ] Office hours
-- [ ] Other: [describe]
+- [x] Other: Internet
 
 **Resolution:**
-[What ultimately worked or where you're still stuck]
+The information I got from Google helped me get the end result I needed.
 
 **What I learned:**
-[What did this teach you about the concept, the tool, or problem-solving?]
+It taught me more in depth how to do comparisons in RStudio
 
 ---
 
