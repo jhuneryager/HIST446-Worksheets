@@ -154,12 +154,12 @@ Whatever you prefer, be consistent and your future self will thank you when your
 
 (@) You try, create a variable and assign it a number: 
 ```{r}
-
+I_Need_Help<-13
 ```
 
 (@) Can you assign a string to a variable?
 ```{r}
-
+z<-"I Need A Nap"
 ```
 
 Once we've assigned a variable we can use that variable to run calculations just like we did with raw numbers.
