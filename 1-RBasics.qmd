@@ -1,7 +1,7 @@
 ---
 title: "Worksheet 1: R Basics"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "September 11th"
 format:
   html:
     df-print: paged
@@ -34,10 +34,14 @@ Numbers can be used to do arithmetic.
 ```
 
 (@) You try, multiple two numbers. 
-
+```{r}
+10*5
+```
 
 (@) Can you multiply two numbers and then divide by the result? 
-
+```{r}
+(4*10)/2
+```
 The next type of value is a **string**. Strings are lines of text. Sometimes these are referred to as character vectors. To create a string, you add text between two quotation marks. For example: 
 ```{r}
 "Go Cardinals"
@@ -45,7 +49,7 @@ The next type of value is a **string**. Strings are lines of text. Sometimes the
 
 (@) Try to create your own string.
 ```{r}
-
+""
 ```
 
 You can't add strings using `+` like you can numbers. But there is a function called `paste()` which concatenates character vectors into one. This function is _very_ useful and one you'll use a lot in a variety of circumstances. Here's what that looks like: 
