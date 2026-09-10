@@ -181,22 +181,28 @@ My.Calculation <- (x + x)*10
 
 (@) You try. Assign a number to x and a number to y. Add those two numbers together.
 ```{r}
-
+x<-12
+y<- 14
+(x+y)
 ```
 
 (@) Can you take `x` and `y` and multiply the result by 5? 
 ```{r}
-
+(x+y)*5
 ```
 
 (@) Try creating two variables with names other than `x ` and `y`. Descriptive names tend to be more useful. Can you multiply the contents of your variables? 
 ```{r}
-
+ILike<-132
+MehMeh<-45
+(ILike*MehMeh)
 ```
 
 (@) Try creating two variables that store strings. Can you concatenate those two variables together? 
 ```{r}
-
+greet_me<-"Hi"
+roomie_power<-"Ava and Kaden"
+paste(greet_me,roomie_power)
 ```
 
 ### Vectors
