@@ -134,6 +134,7 @@ y[c("d")]
 We can subset higher dimensional structures, like matrices, too. First lets define a matrix. In R, **a matrix** is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two dimensional. To create a matrix you can use the `matrix()` function.
 
 > **Why does a historian need matrices?** Honestly, you will rarely build one by hand. We cover them for two reasons. First, data frames behave like a cross between a list and a matrix, so the subsetting you learn here transfers directly. Second, when we get to topic modeling in Worksheet 9, we will build a **document-term matrix** -- documents down the side, words across the top, counts in the cells. That is exactly the structure you are about to practice on, just much larger.
+
 ```{r}
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
@@ -243,7 +244,7 @@ gayguides$city[100:110]
 
 (@) Can you find all the titles of locations in South Carolina? (Hint: You'll need to use both `$` and `[]`)
 ```{r}
-gayguides$title["SC"]
+gayguides$title ["SC"]
 ```
 
 We can also use `$` to create a new column in `gayguides`. 
