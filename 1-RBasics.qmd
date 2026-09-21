@@ -1,7 +1,7 @@
 ---
 title: "Worksheet 1: R Basics"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "September 11th"
 format:
   html:
     df-print: paged
@@ -34,10 +34,14 @@ Numbers can be used to do arithmetic.
 ```
 
 (@) You try, multiple two numbers. 
-
+```{r}
+10*5
+```
 
 (@) Can you multiply two numbers and then divide by the result? 
-
+```{r}
+(4*10)/2
+```
 The next type of value is a **string**. Strings are lines of text. Sometimes these are referred to as character vectors. To create a string, you add text between two quotation marks. For example: 
 ```{r}
 "Go Cardinals"
@@ -45,7 +49,7 @@ The next type of value is a **string**. Strings are lines of text. Sometimes the
 
 (@) Try to create your own string.
 ```{r}
-
+"Homework is done"
 ```
 
 You can't add strings using `+` like you can numbers. But there is a function called `paste()` which concatenates character vectors into one. This function is _very_ useful and one you'll use a lot in a variety of circumstances. Here's what that looks like: 
@@ -56,12 +60,12 @@ paste("Hello", "Ball State Students")
 
 (@) Try it, add two strings together like the above example. 
 ```{r}
-
+paste("Yay", "Homework is Done")
 ```
 
 (@) Can you explain what happened in 2-3 sentences? 
 
-> 
+> When I used the word paste it connected the two strings together. So now I know that method can be used in the future.
 
 The last type are **logical** values like `TRUE` and `FALSE`. (Note that these are all caps.)
 
@@ -101,16 +105,21 @@ Logical Operators allow you to combine or change the results of comparisons.
 ```
 (@) Explain, what does the code on each line above do? 
 
->
+> 5 is equal to 10
+3 is less than 4
+5 is not equal to 10
+5 is not equal to 5
+3 is equal to 4 or 3
+3 is not equal to 4 and 3 is not equal to 5
 
 (@) Create your own comparison. 
 ```{r}
-
+5==12
 ```
 
 (@) Can you write code that checks if a year is between 1970 AND 1980? 
 ```{r}
-
+1970<=1992 & 1992<=1980
 ```
 
 ---
@@ -145,12 +154,12 @@ Whatever you prefer, be consistent and your future self will thank you when your
 
 (@) You try, create a variable and assign it a number: 
 ```{r}
-
+I_Need_Help<-13
 ```
 
 (@) Can you assign a string to a variable?
 ```{r}
-
+z<-"I Need A Nap"
 ```
 
 Once we've assigned a variable we can use that variable to run calculations just like we did with raw numbers.
@@ -172,22 +181,28 @@ My.Calculation <- (x + x)*10
 
 (@) You try. Assign a number to x and a number to y. Add those two numbers together.
 ```{r}
-
+x<-12
+y<- 14
+(x+y)
 ```
 
 (@) Can you take `x` and `y` and multiply the result by 5? 
 ```{r}
-
+(x+y)*5
 ```
 
 (@) Try creating two variables with names other than `x ` and `y`. Descriptive names tend to be more useful. Can you multiply the contents of your variables? 
 ```{r}
-
+ILike<-132
+MehMeh<-45
+(ILike*MehMeh)
 ```
 
 (@) Try creating two variables that store strings. Can you concatenate those two variables together? 
 ```{r}
-
+greet_me<-"Hi"
+roomie_power<-"Ava and Kaden"
+paste(greet_me,roomie_power)
 ```
 
 ### Vectors
@@ -227,7 +242,7 @@ my.numbers * 2
 
 (@) Explain in a few sentences, what happened in the code above?
 
->
+>We were able to make a variable that housed multiple numbers. Then we were able to multiply all of the numbers by two.
 
 Lets try something slightly different. 
 ```{r}
@@ -236,11 +251,11 @@ my.numbers[3] * 2
 
 (@) Explain in a few sentences, what happened in the code above? 
 
->
+>In the code abobe we used the same vector as before. But instead of multiplying all of the numbers by 2 we only multiplied the third number in the set.
 
 (@) You try, create a list of five items and store it in a descriptive variable. 
 ```{r}
-
+the_years<-c(2005,2006,2007,2008,2009)
 ```
 
 
@@ -274,14 +289,14 @@ We can ask R to pull up the documentation like this:
 (@) Now you try, find the documentation for the function  `signif()`.
 ```{r}
 #| eval: false
-
+?signif()
 ```
 
 In real life, you typically you wouldn't want to store this code in your script file. You probably don't need to pull up the documentation for the function every time you run that piece of code. But for the purposes of this worksheet we're adding it to our `.qmd` document. Notice that I included ``#| eval: false`` in both code chunks above -- this is what stops the chunks from executing every time you render your worksheet as an HTML file.
 
 (@) Use the console to find the documentation for `floor()`? Try it and then tell me, what does that function do? 
 
->
+> It takes a single numeric argument x and returns a numeric vector containing largest integers not greater than the corresponding elements of x
 
 ### Data Frames & Packages
 
@@ -320,7 +335,7 @@ What is going on here? Each line within this function (x,y,z) creates a new colu
 
 (@) What is going on in row z? Can you explain the logic here?
 
->
+> Row z is the results of x and y being put into the formula provided. So the logic is the colum x has (x*2)+y.
 
 
 ## Loading Dataframes from Packages
@@ -343,7 +358,7 @@ Run `help(package="DigitalMethodsData")` in your console to pull up a list of da
 
 For demonstration purposes we'll use the `gayguides` data here. Pull up the help documentation for this dataset. What does the documentation tell you abou the scope of this dataset? 
 
->
+>The scope is the address book of a man over the course of 20 years. It was also last updated in 2022.
 
 To use a dataset included in this package we first need to load it. We can do so like this:
 ```{r}
@@ -365,17 +380,17 @@ That gives us the first 6 rows of data. Its really useful if you just want to pe
 
 (@) The default is to print six rows of data. Can you modify the above code to print out the first 10 rows? 
 ```{r}
-
+head(gayguides, n=10L)
 ```
 
 (@) Can you find the last 6 rows of data? 
 ```{r}
-
+tail(gayguides)
 ```
 
 (@) Reflect on the previous two prompts. How did you figure these out? 
 
->
+> I went back to earlier in the assignment to figure these out. I went to the documentation of head() and found the information I needed.
 
 The `str()` function is another very useful function for understanding a dataset. It compactly displays the internal structure of an R object. 
 ```{r}
@@ -396,30 +411,31 @@ gayguides$title[500]
 
 (@) Break this down. Whats going on here? What do each of the elements of this code mean? (gayguides, $, title, and [500]) 
 
->
+>So what is happening here is gayguides tells the system what data set we are using, $ shows we are looking for a certain segment, title tells it what row we want, and 500 tells it what row we are looking at.
 
 (@) The Year variable contains the year (numeric) of each entry. Can you find the earliest year in this dataset? (Using code, don't cheat and use the documentation!)
 ```{r}
+min(gayguides$Year)
 
 ```
 
 
 (@) How about the latest year? 
 ```{r}
-
+max(gayguides$Year)
 ```
 
 
 (@) Add another dataset from `DigitalMethodsData`. How many observations are included in this dataset? Run through some of the examples from above to learn about the dataset.
 ```{r}
-
+head(judges)
+str(judges)
+head(judges$FirstName)
 ```
 
 (@) What did you learn about the dataset? What can you tell me about it? 
 
->
-
-
+> I learned information about the federal judges of the US. It has all of the names of judges, the years they were in office, and a bunch of other facts about the judges.
 
 
 CONGRATS! You've completed your first worksheet for HIST 446. That wasn't so bad, right?
