@@ -295,7 +295,8 @@ Hint: Break this into steps:
    - Step 3: Combine these conditions
    - Step 4: Use this combined condition to subset the data
 ```{r}
-
+LOC <- c(gayguides$title[gayguides$state=="CA"])
+DATE <- c(gayguides$Year=="1970-1979")
       
                       
 ```

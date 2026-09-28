@@ -73,34 +73,6 @@ The packages tab has more information than I originally thought
 
 ---
 
-### Challenge 3 (Optional): [Brief descriptive title]
-
-**What I was trying to do:**
-[Describe the task or problem]
-
-**What went wrong:**
-[Describe the error, confusion, or roadblock]
-
-**My problem-solving process:**
-1. [First attempt - what you did and what happened]
-2. [Second attempt - what you did and what happened]
-3. [Additional attempts if relevant]
-
-**Resources I consulted:**
-- [ ] Documentation for [package/function]
-- [ ] Stack Overflow: [describe what you searched for]
-- [ ] Course materials: [which ones]
-- [ ] Class discussion (Canvas, Slack, or in person)
-- [ ] Office hours
-- [ ] Other: [describe]
-
-**Resolution:**
-[What ultimately worked or where you're still stuck]
-
-**What I learned:**
-[What did this teach you about the concept, the tool, or problem-solving?]
-
----
 
 ## Reflection
 
