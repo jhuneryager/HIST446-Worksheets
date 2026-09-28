@@ -108,3 +108,4 @@ bellevue %>%
   geom_col()
 
 # (f) Choose one of the above visualizations to save to your new output/exercise2/ directory. Commit, then push to GitHub.
+ggsave("output/exercise2/bellevue_occupation_by_gender.png", width = 8, height = 5)
