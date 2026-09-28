@@ -244,7 +244,7 @@ gayguides$city[100:110]
 
 (@) Can you find all the titles of locations in South Carolina? (Hint: You'll need to use both `$` and `[]`)
 ```{r}
-gayguides$title ["SC"]
+gayguides$title [gayguides$state=="SC"]
 ```
 
 We can also use `$` to create a new column in `gayguides`. 
