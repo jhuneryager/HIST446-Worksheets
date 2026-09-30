@@ -64,7 +64,7 @@ Now look at the **scan** of the same page available online by clicking on this U
 
 (@) Find the page in this city directory volume that explains the directory's abbreviations (the table of contents on Page 7 tells you where). What does an asterisk before a name mean?
 
->
+> The asterisk before a name means that the person listed is a person of color.
 
 ### Where did the sample table you loaded with `read_csv()` come from?
 
@@ -84,13 +84,13 @@ if (is.null(live)) {
 
 (@) Notice the object that was fetched from the JSON request `live`. It's a list 66 elements. Go back to the scan of Page 206 at the DMR website. Can you figure out what those 66 elements refer to?
 
->
+> No I can't
 
 The repository answered with a whole record for this one page. In a future worksheet, you'll write a loop that does this for many pages, politely. By the end of this code, we saved just one field, `full`, as `live_text`. 
 
 (@) Which three of the 66 fields became the three columns in `pages`?
 
->
+> The page title, the page ptr, and the text on the page
 
 (@) Run the code chunk below to create a one-row table from the `live` object that has the same columns as the `pages` table and the values for page 206.
 ```{r}
@@ -107,7 +107,7 @@ identical(live_206, as_tibble(page_206)) # check to see if both are identitical
 
 (@) Explain each line in the code above. Remember: You can type `?function()` in your console to access the documentation for any of the functions used above. For example, write `?trimws` and see what happens.
 
-> 
+> The first line is telling it if the 'live' data is null respond with true. The second line is telling it to turn the 'live' data set into a table. And the third line after are telling it to replace the page titles with the title column of the table. The fourth line is telling it to replace the page ptr with the dmr record as numbers. and the fifth line is telling it to clean up the white space and replace the text column with the full column.
 
 ------------------------------------------------------------------------
 
