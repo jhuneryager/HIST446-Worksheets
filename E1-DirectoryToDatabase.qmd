@@ -1,8 +1,8 @@
 ---
 title: "In-Class Exercise: Building a Database of Muncie Directories"
 subtitle: "From a printed source, to a table, to related tables"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "September 30"
 format:
   html:
     df-print: paged
@@ -60,7 +60,7 @@ Now look at the **scan** of the same page available online by clicking on this U
 
 (@) Compare the scan with the text above. Name **three** things a reader of the scan knows that the OCR text gets wrong or loses.
 
->
+> The OCR text loses the text on the side of the page, it loses the address at the bottom of the page, and it messes the spacing up and makes it a jumbled mess.
 
 (@) Find the page in this city directory volume that explains the directory's abbreviations (the table of contents on Page 7 tells you where). What does an asterisk before a name mean?
 
