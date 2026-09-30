@@ -138,12 +138,53 @@ A few rules I followed, all from our readings on spreadsheets and databases:
 Notice: if you look closely, the mark before Calvin Davis's name is clear in the scan, but not as clear in the OCR text.
 
 ```{r}
+by_hand <- tribble(
+  ~entry, ~surname, ~given,    ~spouse,    ~asterisk, ~occupation,                         ~employer,                ~address,    ~housing, ~notes,
+  2,      "Davi",  "Calvin", "NA", TRUE,     "laborer", "NA", "923 Penn", "res",    "Whiteley has no column, no employer listed"
+)
+
+by_hand
+
+by_hand <- tribble(
+  ~entry, ~surname, ~given,    ~spouse,    ~asterisk, ~occupation,                         ~employer,                ~address,    ~housing, ~notes,
+  4,      "Davis",  "Cecil F.", "Pauline A.", FALSE,     "inspector", "NA", "814 W. 1st", "res",    "No employer listed"
+)
+
+by_hand
+
+by_hand <- tribble(
+  ~entry, ~surname, ~given,    ~spouse,    ~asterisk, ~occupation,                         ~employer,                ~address,    ~housing, ~notes,
+  5,      "Davis",  "Chas.", "NA", FALSE,     "carpenter", "NA", "211 E. Seymour", "rooms",    "no employer listed"
+)
+
+by_hand
+
+by_hand <- tribble(
+  ~entry, ~surname, ~given,    ~spouse,    ~asterisk, ~occupation,                         ~employer,                ~address,    ~housing, ~notes,
+  6,      "Davis",  "Chas.", "NA", FALSE,     "moulder", "NA", "217 N. Liberty", "rooms",    "no employer listed"
+)
+
+by_hand
+
+by_hand <- tribble(
+  ~entry, ~surname, ~given,    ~spouse,    ~asterisk, ~occupation,                         ~employer,                ~address,    ~housing, ~notes,
+  7,      "Davis",  "Chas. Eugene", "NA", FALSE,     "draftsman", "NA", "1534 W. 12th", "res",    "no employer listed"
+)
+
+by_hand
+
+by_hand <- tribble(
+  ~entry, ~surname, ~given,    ~spouse,    ~asterisk, ~occupation,                         ~employer,                ~address,    ~housing, ~notes,
+  8,      "Davis",  "Chas. H.", "Anna E.", TRUE,     "laborer", "NA", "820 S. Vine", "res",    "no employer listed"
+)
+
+by_hand
 
 ```
 
 (@) Your table has no row for Naomi, Pauline, or Anna, the wives in parentheses, and no column for a second job (look a few lines further down at Chas. S. Davis). What did the directory's publisher decide about women in these households? What could you do differently when building this table?
 
->
+> The directory publisher decided that women were defined by the men they were married to. I could add a column for the women in my table.
 
 ------------------------------------------------------------------------
 
@@ -200,7 +241,7 @@ by_machine %>%
 
 (@) Compare the machine's rows for your six people with your hand transcription. Where does the machine disagree with you? Look especially at Calvin Davis, whose entry begins with an odd mark in the OCR text, and at Chas. S. Davis, whose entry runs over three lines.
 
->
+> The machine disagrees with me about adding whitely to cecils address. But I'm mostly noticing with the above mentioned people that it is cutting out information if it runs too long.
 
 (@) `count()` tallies rows. Run the code below.
 
@@ -211,12 +252,12 @@ by_machine %>% count(is.na(address))
 (@) What share of entries has no `address`? Use `filter(is.na(address))`).
 
 ```{r}
-
+by_machine %>% filter(is.na(address))
 ```
 
 (@) Pick two of the entries without addresses and try to explain why the parser failed.
 
->
+> For Chas. S. Davis I think it failed because the information was lengthy and slight mixed up due to the addition of an office address. For entry ID number 184 it seems as if the issue was caused because of multiple addresses being present.
 
 ------------------------------------------------------------------------
 
@@ -295,19 +336,19 @@ residences %>%
 
 (@) Seven people "live" at `same`. Write down what you'd do with those rows in a real project: delete them, look up the business address from each entry, or something else? What would each choice do to a count of shared addresses?
 
->
+> I would probably look up the buisness address of each entry. I think all of the options may make the number of shared addresses go down.
 
 (@) The same surname at the same address suggests a family, but the database only **records** a shared address. Pick one shared address from `shared`. What might the people there be to each other? What could you check (another page, another year of the directory, the census) to find out? What does the `housing` column (`res` vs. `rooms` vs. `bds`) add?
 
->
+> I chose 200 Wysor. With 3 people living there the assumption is that they are parents and their child. You could check the census to find this out. The housing column adds the information that the address is not a home but a boarding house of some sort and these people may not be related.
 
 (@) Freedom on the Move stores names in their own table (`enslaved_person_name`), with a column `is_alias`, because one person can appear under several names. Our `people` table has one name per person, and wives appear only inside parentheses. Sketch (in words) one more table you'd add to our database to fix one of these problems. What would one row be, and what would its columns be?
 
->
+> One more table you could add is to add other names for people one row would be a person and the columns would be surname, given, other names, and so on.
 
 (@) Our `asterisk` column comes from a racial classification the publisher printed next to some names. A database makes a column like that very easy to count, map, and join. Name one question a historian could responsibly ask with it, and one way it could be misused.
 
->
+> One question a historian could ask is what jobs people of color held at the time. One way it could be misused is by people at the time using it to find out where people of color lived and potentially do harm.
 
 ------------------------------------------------------------------------
 
