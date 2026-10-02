@@ -1,0 +1,128 @@
+[
+  {
+    "op": "core/column-removal",
+    "columnName": "Column",
+    "description": "Remove column Column"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "RUNAWAY_RELATIONSHIP LEFT_KINSHIP",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "Husband",
+          "Husband ",
+          "husband",
+          "husband "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Husband"
+      },
+      {
+        "from": [
+          "Mother",
+          "Mother ",
+          "mother",
+          "mother "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Mother"
+      },
+      {
+        "from": [
+          "Father",
+          "Father ",
+          "father"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Father"
+      },
+      {
+        "from": [
+          "brother",
+          "Brother",
+          "brother "
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "brother"
+      },
+      {
+        "from": [
+          "Wife",
+          "wife"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Wife"
+      },
+      {
+        "from": [
+          "Son",
+          "son"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Son"
+      },
+      {
+        "from": [
+          "Sister",
+          "sister"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Sister"
+      }
+    ],
+    "description": "Mass edit cells in column RUNAWAY_RELATIONSHIP LEFT_KINSHIP"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "RUNAWAY_RELATIONSHIP LEFT_KINSHIP",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "brother"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Brother"
+      }
+    ],
+    "description": "Mass edit cells in column RUNAWAY_RELATIONSHIP LEFT_KINSHIP"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "RUNAWAY_RELATIONSHIP LEFT_KINSHIP",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "family"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "Family"
+      }
+    ],
+    "description": "Mass edit cells in column RUNAWAY_RELATIONSHIP LEFT_KINSHIP"
+  }
+]

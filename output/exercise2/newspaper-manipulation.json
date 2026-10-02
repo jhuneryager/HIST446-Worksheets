@@ -1,0 +1,66 @@
+[
+  {
+    "op": "core/column-removal",
+    "columnName": "Column",
+    "description": "Remove column Column"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NEWSPAPER NAME",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "The Boston News-Letter",
+          "The Boston Newsletter"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "The Boston News-Letter"
+      },
+      {
+        "from": [
+          "The Virginia Argus",
+          "The Virginia Argus."
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "The Virginia Argus"
+      },
+      {
+        "from": [
+          "The New-York Gazette: and the Weekly Mercury",
+          "The New-York Gazette; and the Weekly Mercury"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "The New-York Gazette: and the Weekly Mercury"
+      }
+    ],
+    "description": "Mass edit cells in column NEWSPAPER NAME"
+  },
+  {
+    "op": "core/mass-edit",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NEWSPAPER VISIBLE",
+    "expression": "value",
+    "edits": [
+      {
+        "from": [
+          "true"
+        ],
+        "fromBlank": false,
+        "fromError": false,
+        "to": "True"
+      }
+    ],
+    "description": "Mass edit cells in column NEWSPAPER VISIBLE"
+  }
+]

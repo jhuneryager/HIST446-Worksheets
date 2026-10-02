@@ -1,8 +1,8 @@
 ---
 title: "In-Class Exercise 3: Markup Bodies"
 subtitle: "Decisions hidden inside a database"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "September 30, 2026"
 format:
   html:
     theme: cosmo
@@ -150,7 +150,7 @@ with_ads <- function(some_runaways) {
 
 (@) Open the `events` and the `ads` tables and identify which columns were used in the code above. To the best of your ability, describe what is happening in the code and how it used specific columns from those tables.
 
-> 
+> It uses the ID tabs to cennect the different columns to combine the charts together.
 
 (@) Now give the new function a test. Write a code below that: 1) filters the `runaways` table to only runaways who have ran before; and 2) joins the filtered subset to their respective advertisement transcriptions.
 
@@ -164,9 +164,9 @@ with_ads <- function(some_runaways) {
 :::
 
 ```{r}
+ran_before <- runaways %>% filter(ran_before == "true")
 
-
-
+ran_before_with_ads <- ran_before %>% with_ads
 ```
 
 ------------------------------------------------------------------------
@@ -194,7 +194,7 @@ FOTM has several ways of saying "nothing here": an empty cell (`NA` in R), `{und
 
 (@) Discuss with your pair or group and answer: what might be the difference between `NOT_PROVIDED` and `{undefined value}`? Why does it matter which one a cell has?
 
->
+>Undefined value seems to be present in rows where there is no information and the NOT_PROVIDED is in areas where it is the only thing missing. This is important because it can help you know how much information a row has.
 
 Now measure how full each field is. The function below counts, for every column you give it, the share of rows with an actual value. `pivot_longer()` is new: it stacks all the columns into two, `field` and `value`, so we can count them all at once.
 
@@ -249,11 +249,11 @@ enslaved_people %>%
 
 (@) Discuss with your pair or group and answer: Which fields are nearly always filled, and which are nearly always empty? Do you see any similarities between the fields that are most commonly filled? What patterns do you see?
 
->
+> The fields that are nearly always filled are the fields like racial description and and gender. The similarities are that the fields are always observable. They are things that the person writing the ad could see.
 
 (@) Is that pattern a fact about the people who ran away, about the enslavers who wrote the ads, or about the volunteers who marked up the ads? Could it be all three? Think of Johnson's article in your answer.
 
->
+> I think the pattern is a fact about the enslavers because the visible information is the most important factor in getting their enslaved people caught.
 
 ------------------------------------------------------------------------
 
@@ -284,11 +284,11 @@ Click the ▼ on `RUNAWAY_RELATIONSHIP LEFT_KINSHIP` → **Facet** → **Text fa
 
 (@) How many choices does each facet list in total?
 
->
+> In total it is 106.
 
 (@) Some of the "choices" look identical. Click one of the identical-looking pairs: what is actually different about them?
 
->
+> The difference is the capitilzation and the spacing.
 
 ---------------------------------------
 ### Cleaning the easy fixes
@@ -301,7 +301,7 @@ The following fixes don't change meaning or interpretation, so we'll do these fi
 
 (@) How many choices does each facet list now?
 
->
+> Mother= 33 Father=11 Husband= 16
 
 ### The hard fixes
 
@@ -325,7 +325,7 @@ hard_cases %>% filter(left_kinship == "slave") %>% pull(transcription) %>% cat(s
 
 (@) Discuss with your pair or group: Who is John Halsey, and why is he in a table of *runaways* and a table of *kinship*? What does this data point tell you about the difference between the database's categories and the historical relationship?
 
->
+> John Halsey is the runaway slaves former owner but also the person who helped her run away. It tells me that the databases categories and historical relationship are all mixed up.
 
 (@) Now let's print all the ads from hard_cases to examine the other five rows:
 ```{r}
@@ -334,7 +334,7 @@ hard_cases %>% pull(transcription) %>% cat(sep = "\n\n----------\n\n")
 
 (@) All the other five rows come from the **same ad**, printed on different days and transcribed separately. What does the ad actually say about how George, Celia, and Sarah are related? What did each volunteer's markup add to, or take away from, what the ad says?
 
->
+> It says that they are of one family so they are related biologically. Each markup removed the familial relationship between the people listed.
 
 This advertisement was printed many times. Let's generate a subset table with all of the reprints of the advertisement. The subset's unit of analysis should be one row per person per printing.
 
@@ -410,6 +410,8 @@ Now make your decisions in OpenRefine. To change a value, hover over it in the f
 my_kinship_decisions <- tribble(
   ~original,   ~changed_to, ~why,
   "mother",    "Mother",    "Same word, different capitalization.",
+  "brother", "Brother", "Same word, different capitalization",
+  "family", "Family", "Same word, different capitalization",
   # add your rows here
 )
 
@@ -461,14 +463,14 @@ passing <- runaways %>%
   with_ads() %>%
   mutate(ad_says_pass = str_detect(str_to_lower(transcription), "pass"))
 
-passing %>% count(ad_says_pass)
+passing %>% count(ad_says_pass == FALSE)
 
 passing %>% filter(ad_says_pass) %>% slice(1:3) %>% pull(transcription) %>% cat(sep = "\n\n----------\n\n")
 ```
 
 (@) What words do the ads use where the database says `white passing`? Now read two ads where `ad_says_pass` is `FALSE` (change the code above). Why do you think the volunteer tagged them `white passing`?
 
->
+> The words used where the database says white passing it uses terms like "white negro man" and "not very black" to show that they are still of african descent but they don't necessarily look like it. The same reason as the others they are light-skinned.
 
 Last, the most common term. How often does the ad itself use the word?
 
@@ -480,7 +482,7 @@ tagged_negro <- runaways %>%
 
 tagged_negro %>% count(ad_says_negro)
 
-set.seed(100)
+set.seed(200)
 tagged_negro %>%
   filter(!ad_says_negro) %>%
   slice_sample(n = 3) %>%
@@ -490,7 +492,7 @@ tagged_negro %>%
 
 (@) In the ads where the word doesn't appear, what did the enslaver write instead, and what did the volunteer infer? (Run the chunk again with a different `set.seed()` number to read two more.) What's the difference between a field that records *what the ad says* and a field that records *what the ad implies*?
 
->
+> It seems as thought the ads in which the term doesn't appear it is just in a different language. So the term is still there and the volunteer is inferring from what they can understand of the langauge that it isn't there.
 
 ------------------------------------------------------------------------
 
@@ -498,7 +500,7 @@ tagged_negro %>%
 
 (@) In one paragraph (about 250 words), answer: after cleaning two FOTM fields yourself, what do you think Johnson means by "markup bodies"? Refer to at least one decision you made in OpenRefine and one thing you found in Part 5.
 
->
+> I think by markup bodies he means that the markup files are like the bodies of humans and they have all of these different moving parts that go into the making it works. There are also "edits" that have to be made to make the system run more efficiently. For example, removing the extra column in Open Refine is like getting your wisdom teeth removed. You didn't really need the column like people don't really need their wisdom teeth. If they start causing problems, you get rid of them. The extra columns in Open Refine were causing issues in R Studio. A second example within Open Refine is the combining of similar topic names. Our bodies use many pieces to create our DNA and our DNA is sort of separated into chunks. But there are only so many chunks to make it easier for our body to use. This is similar to us combining names within the data sets so that they are easier to read comprehend and use. Another example is the things we did in part 5. Pulling the data out of the system to get more information is like getting your blood drawn. When you are trying to figure out what is happening within your body or you are having issues you get your blood drawn to find the information. With the markup files it is just pulling the data to the surface of the database so we can read and analyze it just like a blood draw. 
 
 ------------------------------------------------------------------------
 
@@ -508,7 +510,6 @@ Save the tables you made. They're small and made from FOTM by you, so they go in
 
 ```{r}
 write_csv(my_kinship_decisions, "output/exercise2/kinship_decisions.csv")
-write_csv(my_term_decisions,    "output/exercise2/racial_description_decisions.csv")
 ```
 
 Before you commit, click on Render to create a new .html file of this exercise. Then, look at the **Changes** list in GitHub Desktop. You should see this file, the new html file, and `output/exercise2/` (two JSON histories, `relationships_clean.csv`, and two decision tables). If anything from `data/FOTM/` appears there, **stop and ask me** before committing.
