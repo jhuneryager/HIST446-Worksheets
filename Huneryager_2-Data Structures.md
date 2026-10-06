@@ -77,12 +77,12 @@ The packages tab has more information than I originally thought
 ## Reflection
 
 **What I understand well now:**
-[What clicked for you this week?]
+I think the creation of vectors was relatively easy for me to figure out and I could probably do really well with them in the future.
 
 **What I'm still confused about:**
-[What remains unclear? What questions do you have?]
+I have no idea what I am supposed to be doing with those challenges at the bottom of the page. 
 
 **Connection to historical research:**
-[How might this week's skills apply to your research?]
+It is important to know how to find that information at the bottom but I'm just confused on how to do so.
 
 
