@@ -120,21 +120,22 @@ n_distinct(newspapers$name)   # how many different newspaper titles?
 Titles aren't the whole story: two papers can share a name, and one paper can move. So count the different newspapers by title **and** place of publication:
 
 ```{r}
-ads_place %>%
-  distinct(newspaper, city, state) %>%
-  nrow()                               
+test <- ads_place %>%
+  distinct(newspaper, city, state)
 ```
 
 (@) What did the `distinct()` function do in the chunk above?
 Hint: take a peak at the documentation for the function with `?distinct`.
 
->
+> It excluded all the repeating rows.
 
 (@) The `newspaper` table has 41,551 rows, but notice many different newspapers (unique pair of title + place) there are. So what is the **unit of analysis** in the `newspaper` table? In other words, what is one row? 
 
->
+> Newspaper Titles.
 
 (@) Then find a title that appears in two places: did the paper move, are these two different papers, or is it an error? 
+
+> The Charleston Gazette appears multiple times. The change is spelling and different versions.
 
 ::: {.callout-tip}
 ## Tip:
@@ -144,10 +145,10 @@ To answer the question, you need two things for each title: **where** it was pub
 
 ```r
    ads_place %>%
-     group_by(______) %>%
+     group_by(newspaper, city, state) %>%
      summarize(ads   = n(),
-               first = min(________),
-               last  = max(________),
+               first = min(publication_date),
+               last  = max(publication_date),
                .groups = "drop")
 ```
 2. **Count places per title.** Pipe that into `add_count(_______)` so that each row shows how many places its title appears in.
@@ -163,7 +164,13 @@ To answer the question, you need two things for each title: **where** it was pub
 
 
 ```{r}
-
+ ads_place_count <- ads_place %>%
+     group_by(newspaper, city, state) %>%
+     summarize(ads   = n(),
+               first = min(publication_date),
+               last  = max(publication_date),
+               .groups = "drop") %>% add_count(newspaper) %>% filter(n > 1)
+  
 ```
 Write your findings here:
 
