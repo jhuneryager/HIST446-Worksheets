@@ -1,8 +1,8 @@
 ---
 title: "In-Class Exercise 4: An Exploratory Data Analysis Checklist"
 subtitle: "Roger Peng's checklist, applied to Freedom on the Move"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "October 7, 2026"
 format:
   html:
     theme: cosmo
@@ -67,7 +67,7 @@ FOTM can't answer that directly: it holds *advertisements*, not escapes.
 
 (@) Write your own sharp question about FOTM's advertisements: one that names exactly what you'd count or measure, and for what unit (an ad, a newspaper, a state, a decade...).
 
->
+> What states had the most slave escapes throughout the advertisements?
 
 Save your question for a possible future investigation. For the purpose of learning Peng's checklist, we'll pursue a question this database can actually answer:
 
