@@ -88,6 +88,7 @@ if (length(R) > 5) { print("This is true")} else {print("What are you doing")}
 (@) You can also use an if statement to check a variable in a dataframe. How might you use an if statement to check if the GayGuides dataset contains any year after 1990? (Hint: first try to figure out how to determine the latest year in the dataframe and then build an if statement that checks that and prints something out if its true or false. You should think about what kind of value in contained in the Year column, how to access it, and how to check for the latest value.) 
 
 ```{r}
+tail(order(gayguides$Year),1)
 
 ```
 
