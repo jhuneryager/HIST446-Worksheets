@@ -1,8 +1,8 @@
 ---
 title: "In-Class Exercise 5: Distant Reading *The American City*"
 subtitle: "Text analysis in Voyant Tools"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "Ocotber 21st"
 format:
   html:
     theme: cosmo

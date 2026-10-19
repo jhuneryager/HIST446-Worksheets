@@ -135,7 +135,7 @@ for (p in 1:length(presidents)) {
 ```{r}
 J <- c("Geography 265", "EDJH 385", "Social Studies 350", "History 446", "Honors 390")
 
-for (i in 1:length(J)) {print("I am enrolled in"[i])}
+for (i in 1:length(J)) {print(vctrs::vec_c("I am enrolled in", J)[i])}
 ```
 
 (@) Now let's practice with data. Create a loop that prints out the first 5 titles from the gayguides dataset. Hint: You'll need to loop from 1 to 5 and access `gayguides$title[i]`
