@@ -88,13 +88,13 @@ if (length(R) > 5) { print("This is true")} else {print("What are you doing")}
 (@) You can also use an if statement to check a variable in a dataframe. How might you use an if statement to check if the GayGuides dataset contains any year after 1990? (Hint: first try to figure out how to determine the latest year in the dataframe and then build an if statement that checks that and prints something out if its true or false. You should think about what kind of value in contained in the Year column, how to access it, and how to check for the latest value.) 
 
 ```{r}
-tail(order(gayguides$Year),1)
+if (tail(order(gayguides$Year),1) > 1990) {print("Yes")}
 
 ```
 
 (@) Reflect on the question above. How did you figure this out? What was the process you went through to build this chunk of code?
 
-> 
+> I kind of just went off the work that was already given above and used the help tab to find the functions I need.
 
 #### Loops
 
@@ -126,14 +126,16 @@ for (p in 1:length(presidents)) {
 
 (@) Why does this work? What does `length()` do and why do we use it on `presidents`?
 
-> 
+> The length function sees how many items are in the set. So we use it on president to tell the system how many items are in the list.
 
 (@) Create a character vector that contains the title of each of your classes this semester. Can you write a `for` loop that prints out "I am enrolled in" and the name of each of your classes? ("I am enrolled in History 200", "I am enrolled in History 446".....etc). 
 
 **Hint:** You'll need a function to combine the output and some text of your choosing inside the function.
 
 ```{r}
+J <- c("Geography 265", "EDJH 385", "Social Studies 350", "History 446", "Honors 390")
 
+for (i in 1:length(J)) {print("I am enrolled in"[i])}
 ```
 
 (@) Now let's practice with data. Create a loop that prints out the first 5 titles from the gayguides dataset. Hint: You'll need to loop from 1 to 5 and access `gayguides$title[i]`

@@ -39,19 +39,19 @@ _If you had no issues or challenges, mark the checkbox below and delete the Chal
 ### Challenge 1:
 
 **Brief Descriptive Title:**
->
+> President if else statement
 
 **Describe the task or problem:**
->
+> Make a list of presidents and tell if it is greater or less than 5
 
 **Describe the error, confusion, or obstacle you encoutered:**
->
+> I couldn't figure out how to make it show up as a number.
 
 **Describe your attempts to problem-solve the issue:**
 Attempts:
-1. > 
-2. >
-3. >
+1. > Tried using the number
+2. > Tried using column and row format
+3. > Asked Luc for help
 
 **Which resources did you consult?:**
 
@@ -59,16 +59,16 @@ _Replace the placeholder text in brackets ``[   ]`` for specific details of your
 
 - [ ] Documentation for [package-or-function]
 - [ ] Stack Overflow: [describe-what-you-searched-for]
-- [ ] Course materials: [which-ones]
+- [x] Course materials: [previous sections of the worksheet]
 - [ ] Class discussion
-- [ ] Office hours
+- [x] Office hours
 - [ ] Other: [describe]
 
 **Did you figure out a solution?**
->
+> Yes I did
 
 **What did you learn from this challenge?**
->
+> What the use of the length function is.
 
 
 ### Challenge 2:
