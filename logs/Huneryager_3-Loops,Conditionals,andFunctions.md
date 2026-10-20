@@ -74,25 +74,25 @@ _Replace the placeholder text in brackets ``[   ]`` for specific details of your
 ### Challenge 2:
 
 **Brief Descriptive Title:**
->
+> Loop for classes
 
 **Describe the task or problem:**
->
+> Create a loop about the classes we are taking
 
 **Describe the error, confusion, or obstacle you encoutered:**
->
+> I couldn't get the 2 statements to combine
 
 **Describe your attempts to problem-solve the issue:**
 Attempts:
-1. > 
-2. >
-3. >
+1. > Tried one way to write it
+2. > Tried a different way to write it
+3. > Looked in the packages
 
 **Which resources did you consult?:**
 
 _Replace the placeholder text in brackets ``[   ]`` for specific details of your case._
 
-- [ ] Documentation for [package-or-function]
+- [x] Documentation for [combine]
 - [ ] Stack Overflow: [describe-what-you-searched-for]
 - [ ] Course materials: [which-ones]
 - [ ] Class discussion
@@ -100,10 +100,10 @@ _Replace the placeholder text in brackets ``[   ]`` for specific details of your
 - [ ] Other: [describe]
 
 **Did you figure out a solution?**
->
+> Kind of
 
 **What did you learn from this challenge?**
->
+> About defunct functions
 
 _Repeat the template above for any additional challenges you would like to include here._
 
