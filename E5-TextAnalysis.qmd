@@ -2,7 +2,7 @@
 title: "In-Class Exercise 5: Distant Reading *The American City*"
 subtitle: "Text analysis in Voyant Tools"
 author: "Jordan Huneryager"
-date: "Ocotber 21st"
+date: "Ocotber 19"
 format:
   html:
     theme: cosmo
@@ -42,7 +42,7 @@ If you can't find any of the tools mentioned below, hover over the grey header o
 
 4. **Save your corpus.** Click the **Export** icon (a diskette) in the blue bar at the very top and copy the link. Then select **an HTML snippet for embedding this view in another web page**. That URL reopens this exact corpus later, so you don't have to upload it again. Copy the URL that starts after **src =**. Paste it here:
 
-> 
+> https://voyant-tools.org/?corpus=979b788da0b3b987e76c24a2c4005ad4&panels=cirrus,reader,trends,summary,contexts
 
 ::: {.callout-warning}
 ## Keep in mind:
@@ -62,13 +62,13 @@ Open the **Documents** tab (bottom left).
 
 (@) What counts as a document in this corpus, and how many are there? Who made this decision?
 
->
+> 24. The person who made the corpus.
 
 Now open **Summary** (same panel).
 
 (@) How many words and how many unique words does the corpus have? Which document is the longest and which the shortest?
 
-> 
+> It has 1,463,997 total words and 58,907 unique words. The longest document is 1916-06_June and the shortest is 1915-07_July.
 
 --------------------------------------------------------------------------------
 
@@ -80,7 +80,7 @@ Look at **Cirrus**, then switch to the **Terms** tab (same panel) to see the sam
 
 (@) What are the five most frequent words? What does that tell you about the contents of the magazine?
 
->
+> city, new, American, street, work. Street work in American cities.
 
 --------------------------------------------------------------------------------
 
@@ -94,11 +94,11 @@ Scroll down the **Terms** table. Some "words" aren't words at all.
 
 (@) List at least four tokens in the top 50 that aren't real words, or don't mean what they seem to mean. For one of them, type it into the search box in **Contexts** (bottom right) and read a few lines. Where does it come from?
 
->
+>ing, ee, st, tion. Tion is mostly at the ends of words.
 
 (@) *American* and *york* are near the top of the list. Use **Contexts** to find out why. Are they telling you something about the magazine's content?
 
->
+> Ther are telling me where the document is located.
 
 ### 3b. Edit the stopword list
 
@@ -111,7 +111,7 @@ Now make your own cleaning decisions:
 
 (@) Which words did you add to the stopword list, and why? Did you remove anything that might matter for a historian?
 
->
+> I removed the location terms. It may have mattered due to people needing to know where things are.
 
 ### 3c. Lowercasing and word forms
 
@@ -124,7 +124,7 @@ Voyant lowercases every word automatically, so *City* and *city* are counted tog
 
 (@) How do the counts change across these four searches? When would combining word forms be useful for a historian, and when would it hide something? (Remember the slide's example: stemming *nations* and *national* to *nation*.)
 
->
+>The count goes up most of the time. It could prevent us from seeing some specific information.
 
 ------------------------------------------------------------------------
 
@@ -136,12 +136,12 @@ Open the **Phrases** tab (bottom left). It lists repeated sequences of words, lo
 
 (@) Find three phrases of two or three words that tell you more than their single words would on their own (for example, a phrase whose words mean something different when separated). What do they reveal about the magazine's concerns?
 
->
+> The magazines concerns are the people.They want people to take into account their safety.
 
 
 (@) Now find two phrases of two or three words that are, in fact, parts of a singular word that were mistakenly separated.
 
-> 
+> writ ten, work ing
 
 ------------------------------------------------------------------------
 
@@ -155,13 +155,13 @@ Trends uses *relative frequency* by default: the word's count divided by the len
 
 (@) In which issue does `jitney` peak? Click on the peak, then read some of the passages in **Contexts** and **Reader**. What was a jitney, and why were city officials writing about it at that moment? (A quick search outside Voyant is fine; cite your source.)
 
->
+>1915-06_June. It seems as though it has to do with the busses.
 
 Now compare a few words over time. Type them into the **Trends** search box separated by commas, for example `preparedness, war, playground, motor`.
 
 (@) Pick two words whose trends differ in an interesting way. Describe what the chart shows, then read a few contexts for each. What historical developments of 1915–1916 might explain the pattern? What would you need to check before making that claim?
 
->
+> preparedness goes up and down a lot near the end and playground goes up and down a lot. I think the devlopments are playgrounds being built and preparedness is in reference to making changes. You would need to check the document before making a decision.
 
 ------------------------------------------------------------------------
 
@@ -181,11 +181,11 @@ Now go back to **Summary** (bottom left) and scroll to *Distinctive words*: the 
 
 (@) Find two issues whose distinctive words point to something historically meaningful (an event, a debate, a new technology). What are they, and what do they suggest?
 
->
+> Issues 9 and and 10 in the list both talk about digitized. 
 
 (@) Now find distinctive words that are artifacts of how the corpus was made rather than of what the magazine said. Look for things like Roman numerals, misspelled month names, or a word that only appears in some issues. Use **Contexts** to find where one of them comes from. What does it tell you about how these issues were digitized, and about trusting tf-idf?
 
->
+> It tells me it was digitized in volumes so the tf-idf might be hard to trust sometimes.
 
 ------------------------------------------------------------------------
 
@@ -197,7 +197,7 @@ Open the **Collocates** tool (bottom right panel). Type a word you're curious ab
 
 (@) Which word did you choose, and what are its most frequent collocates? What do they suggest about how *The American City* talked about that subject?
 
->
+> I chose the word men. Its most frequent collocates are women, work, and city. It talked about men and women in the same context and men and working.
 
 ------------------------------------------------------------------------
 
@@ -207,11 +207,11 @@ Text analysis methods range from *rule-based* (humans give the rules and word li
 
 (@) Sort what you did today into the slides' categories: which steps were rule-based, and which were counting? Did Voyant *learn* anything?
 
->
+> I think all of the directions given are word based and the results are counting. I think voyant learned about some unimportant words and things.
 
 (@) We've talked about how every step of the conversion from text to numbers involves choices about what to keep and what to discard. In one paragraph, describe three choices that were made today (by you, by Voyant, or by whoever digitized these issues) and how each one changed what you could see in *The American City*.
 
->
+> One change made by me was the inclusion and exclusion of terms based on necessity. One decision that voyant made was combining terms. One choice made by the people who digitized it is how the topics are organized.
 
 ------------------------------------------------------------------------
 
