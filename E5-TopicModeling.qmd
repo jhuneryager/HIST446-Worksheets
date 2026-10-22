@@ -1,8 +1,8 @@
 ---
 title: "In-Class Exercise 5, Part 2: Topic Modeling *The American City*"
 subtitle: "A first topic model in R"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "October 21"
 format:
   html:
     theme: cosmo
@@ -83,7 +83,7 @@ nrow(tokens)
 
 **Q1. Discuss with your pair or group:** How many words does R count in the corpus? Compare that with the total Voyant gave you in Part 1 of `E5-TextAnalysis.qmd`. If the numbers differ, why might two programs count the "same" words differently?
 
->
+>1,463,997
 
 ------------------------------------------------------------------------
 
@@ -108,7 +108,7 @@ chunk_info
 
 **Q2. Discuss with your pair or group:** How many documents do we have now? What do we gain from chunking, and what might we lose?
 
->
+>1,476. We gain the ability to have less to go through and lose all the data.
 
 ------------------------------------------------------------------------
 
@@ -123,7 +123,7 @@ Like we did on Monday with Voyant's stopword list, we need to make decisions abo
 
 ```{r}
 # Chunk 6
-my_stopwords <- c("ing", "tion", "con", "ment")   # word fragments from line breaks; add your own
+my_stopwords <- c("ing", "tion", "con", "ment", "american", "new", "city", "york")   # word fragments from line breaks; add your own
 
 words <- tokens %>%
   anti_join(stop_words, by = "word") %>%
@@ -136,7 +136,7 @@ words %>% count(word, sort = TRUE)
 
 **Q3. Discuss with your pair or group:** Look at the 50 most frequent words above. Which junk tokens from Voyant (Part 3 of `E5-TextAnalysis.qmd`) and which others you see now would you add to `my_stopwords`? Is there a reason you can think of to remove any real words from this corpus? Which ones and why?
 
->
+> You can remove the location based words because we know where they are located
 
 ------------------------------------------------------------------------
 
