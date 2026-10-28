@@ -580,7 +580,7 @@ Last step: join the coordinates back to the **people**, map them, and save the a
 ```{r}
 #| fig-width: 7
 #| fig-height: 7
-# Chunk 24
+# Chunk 24-A
 residents <- addresses %>%
   left_join(geocoded %>% select(street, lat, long, match_indicator, match_type, matched_address),
             by = "street")
@@ -602,7 +602,11 @@ ggplot(muncie, aes(x = long, y = lat)) +
        caption = str_glue("{nrow(muncie)} of {nrow(by_machine)} entries placed ({match_rate}%), geocoded with today's Census street data."),
        x = NULL, y = NULL, color = NULL, size = NULL) +
   theme_minimal()
+```
 
+```{r}
+# Chunk 24-B
+# save your outputs
 ggsave("output/exercise6/muncie_1925_map.png", width = 7, height = 7, bg = "white")
 
 residents %>%
@@ -610,7 +614,6 @@ residents %>%
   select(entry, address, street) %>%
   write_csv("output/exercise6/unmatched.csv")
 ```
-
 **Q11.** The map has no streets, river, or rail lines. What would you need to add before it could say anything about 1925 Muncie? Then go back to your answer to the last question of Exercise 1. Now that you've actually mapped the asterisk, what should a responsible version of this map include or explain before anyone sees it?
 
 > 
