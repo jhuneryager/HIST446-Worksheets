@@ -358,7 +358,11 @@ ggplot() +
        x = NULL, y = NULL, size = "Mentions") +
   theme_void() +
   theme(plot.margin = margin(10, 10, 10, 10))
+```
 
+```{r}
+# Chunk 16-B
+# save your outputs
 ggsave("output/exercise6/amcity_places_map.png", width = 10, height = 6, bg = "white")
 write_csv(places, "output/exercise6/amcity_places.csv")
 ```
