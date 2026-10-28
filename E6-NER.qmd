@@ -25,7 +25,7 @@ This week's two readings are about places in printed text. Blevins counted every
 
 **This exercise is done at home, on your own.** We won't meet on Wednesday (10/28), so everything you need is in this file. Run each chunk in order (they're numbered `# Chunk 1`, `# Chunk 2`, ...), read the output, and **write your answers after each `>`**. As always, you're graded on documented effort, not on mastery. If a chunk gives you an error you can't fix, copy the error message under the nearest question and keep going.
 
-Budget about two hours. Two chunks need an internet connection (Chunks 7 and 21), and two can take a few minutes the first time you run them (Chunks 9 and 21).
+Budget about 75 minutes. Two chunks need an internet connection (Chunks 7 and 21), and two can take a few minutes the first time you run them (Chunks 9 and 21).
 :::
 
 ::: callout-tip
@@ -162,7 +162,7 @@ tagged_example <- predict(model, example)
 tagged_example
 ```
 
-Scroll through `tagged_example`. Notice that the model returns **one row per word again**. The `entity` column shows the model's guesses. Possible tags are: `LOC` for locations, `PER` for persons, `ORG` for organizations, and `MISC` for miscellaneous proper names that aren't any of the above. This model also uses the **B-/I-/O** code that we've seen in class on Monday (10/26): `B-LOC` begins a location, `I-LOC` continues it, and `O` means "not a name."
+Scroll through `tagged_example`. Notice that the model returns **one row per word again**. The `entity` column shows the model's guesses. Possible tags are: `LOC` for locations, `PER` for persons, `ORG` for organizations, and `MISC` for miscellaneous proper names that aren't any of the above.
 
 **Q2.** This model also uses the **B-/I-/O** code that we've seen in class on Monday (10/26). What do `B-LOC` and `I-LOC` mean? What is the `O` code used for?
 
