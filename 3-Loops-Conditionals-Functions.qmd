@@ -177,11 +177,13 @@ for (i in 1:10) {
 
 (@) What happened here? Why did the loop only print 3 and 4? 
 
->
+> Because it says if the number is less than 3 break and connects it to if it is great er than or equal to 5 break.
 
 (@) What if we wanted to loop through the gay guides data? Can you write a loop that iterates through the cities in the Gay Guides data and returns the title of any location in Greenville? 
 ```{r}
-
+for (i in gayguides)
+  if (i = greenville)
+    print (i)
 ```
 
 (@) The Gay Guides data is quite large (60,000+ entries). Write a loop that searches through the data and finds the first 5 locations in New York City. Your loop should:
@@ -192,7 +194,12 @@ for (i in 1:10) {
 **Hint 1:** Create a counter to track how many you've found.
 **Hint 2:** The city appears in the data as 'New York City'.
 ```{r}
-
+for (i in gayguides)
+  if (city= NYC)
+    next
+if (n=5)
+  break
+print (i)
 ```
 
 `while` is another useful tool for writing loops. While will run a loop _while_ a condition is true. Once that condition is not true, it exits. For example: 
@@ -239,7 +246,10 @@ historyStudents <- function(studentname, class) {
 
 (@) Can you run this function? 
 ```{r}
-
+historyStudents <- function(studentname, class) {
+  statement <- paste("Hello ", studentname, ". Welcome to ", class, "!", sep="")
+  statement
+}
 ```
 
 
@@ -254,22 +264,24 @@ Let's start with a simpler function to build confidence.
 
 (@) Write a function called `double()` that takes a number and returns that number multiplied by 2.
 ```{r}
+double(6)
 ```
 
 (@) Write a function called `greet()` that takes a name and returns "Hello, [name]!" 
 ```{r}
+greet ("Hello,Lily!")
 ```
 
 Now let's try something more complex:
 
 (@) Write a function that takes a string of text and counts the number of characters. The function should return "There are xx characters in that string." 
 ```{r}
-
+Countcharacters(I love cheese)
 ```
 
 (@) Reflect on the process of building the above function. How did you go about figuring this out? 
 
->
+> Im not really sure what I'm doing. Its all confusing.
 
 The body of a functions can use any of the techniques we've learned in this worksheet like loops and if statements. For example: 
 ```{r}
@@ -297,7 +309,7 @@ grade(75)
 GeorgeWashington <- grade(60)
 ```
 
->
+> Its in the values.
 
 
 Here's a more complex example: 
@@ -320,11 +332,35 @@ gg.locations("San Diego", 1980)
 (@) Write a function that accepts two arguments: a state and a year. The function should pull all the locations in that state and year from the gayguides dataset and return a statement that says "Found a location in [state] called [location title]". (Where [state] is the state and [location title] is the title of a location in that year and state.)
 
 ```{r}
+gg.locations <- function (d.state, d.year) {
+  data(gayguides)
 
+  for (i in 1:length(gayguides$state)) {
+    if (gayguides$state[i] == d.state && gayguides$Year[i] == d.year) {
+     print(paste("Found a location called ", gayguides$title[i]))
+    } else {
+      next 
+    } 
+  }
+}
+
+gg.locations("California", 1980)
 ```
 
 (@) Use the Boston Women Voters dataset (BostonWomenVoters). Write a function that accepts the name of an occupation. Your function should return new dataframe that includes the records for every voter listed with that occupation.  
 ```{r}
+gg.locations <- function (d.occupation) {
+  data("BostonWomenVoters")
+
+  for (i in 1:length(BostonWomenVoters$occupation)) {
+    if (BostonWomenVoters$Occupation[i]
+     print(paste("Found a location called ", gayguides$title[i]))
+    } else {
+      next 
+    } 
+  }
+}
+
 
 ```
 
@@ -337,6 +373,7 @@ gg.locations("San Diego", 1980)
    - Counts how many locations are in that state
    - Returns a statement like "There are XX locations in [state]"
 ```{r}
+Im sorry Im confused
 ```
 
 (@) Can you modify your function to also accept a year as a second argument? So `count_by_state("SC", 1975)` would count locations in SC in 1975.
@@ -345,4 +382,4 @@ gg.locations("San Diego", 1980)
 
 (@) Reflection: How do loops, conditionals, and functions work together? Give an example from this worksheet where you used all three.
 
->
+> I don't really know

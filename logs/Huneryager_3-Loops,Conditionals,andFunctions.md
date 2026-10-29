@@ -111,12 +111,12 @@ _Repeat the template above for any additional challenges you would like to inclu
 ## Reflection
 
 **What I understand well now:**
->
+> Choices.
 
 **What I'm still confused about:**
->
+> Everything else
 
 **How might this week's skills apply to your research?**
->
+> Im not sure.
 
 
