@@ -1,8 +1,8 @@
 ---
 title: "Exercise 6: Places in Text, Places on a Map"
 subtitle: "Named entity recognition and geocoding in R"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "October 29, 2026"
 format:
   html:
     theme: cosmo
@@ -105,13 +105,13 @@ Read five random paragraphs. Run the chunk a few times to see different ones.
 ```{r}
 # Chunk 5
 paragraphs %>%
-  slice_sample(n = 5) %>%
+  slice_sample(n =69) %>%
   pull(text)
 ```
 
 **Q1.** Find two place names in the paragraphs you read, and one place where the OCR split a name. Then explain in your own words why we kept the capital letters this time, when we removed them for topic modeling in Exercise 5.
 
-> 
+> Washington, D.C, Cincinatti, Theod-ore Denton. I think we need to keep the capitals because it would be hard to find them if we didn't.
 
 ------------------------------------------------------------------------
 
@@ -166,7 +166,7 @@ Scroll through `tagged_example`. Notice that the model returns **one row per wor
 
 **Q2.** This model also uses the **B-/I-/O** code that we've seen in class on Monday (10/26). What do `B-LOC` and `I-LOC` mean? What is the `O` code used for?
 
-> 
+> B-Loc means it is the first location and I-Loc means it is inside the location. The O code is used for anything else that is not related.
 
 One word per row isn't what we want because examples like "New" and "York" should be a single place. The function below walks down the rows and glues each `B-` word to the `I-` words that follow it:
 
@@ -230,7 +230,7 @@ loc_counts %>% slice_head(n = 30)
 
 **Q3.** Read the top 30 locations. Which are not cities at all (states, regions, countries)?
 
-> 
+> New York, Ohio, PA, United States, Ill, Washington, America, Mich, OHIO, Wis, NEW YORK, Canada.
 
 The other types are worth a look too:
 
@@ -245,11 +245,11 @@ entities %>%
 
 **Q4-A.** Can you spot wrongly tagged entities above?
 
-> 
+> American Crry, F, f. American Ciry, AMERICAN CITY Vor, American cry, St, Inc, Co, O
 
 **Q4-B.** Many MISC names are nationalities or adjectives ("American", "German"). My paper counted "Brazilian" as a mention of Brazil, because at the St. Louis world's fair every nationality represented a geographic place. Would that decision make sense for *The American City*? Give one example from your MISC list where lumping a nationality with a place would help, and one where it would mislead.
 
-> 
+> I think this would make sense in some contexts like with American City. Its the title of the article so it makes sense. But with things like European and German I think it could get confusing.
 
 ------------------------------------------------------------------------
 
@@ -290,14 +290,14 @@ Pick one ambiguous name from this table (Springfield, Portland, Columbus...). Fi
 # Chunk 14-B
 #| eval: false
 paragraphs %>% 
-  filter(str_detect(text, "__________")) %>% 
+  filter(str_detect(text, "Peoria")) %>% 
   pull(text) %>%
   head(n = 15)
 ```
 
 **Q5.** Which city does the magazine mean, and how did you tell? Go back to our reading for Monday's class. How did Cameron Blevins decide which "Washington" or "Springfield" a Houston newspaper meant?
 
-> 
+> The magazine is talking about Peoria Illinois. I know this because after every listing of Peoria it says Ill. It is made clear in Blevins writing.
 
 We need some rule for the ambiguous names. Here's a common and blunt one: pick the place with the largest population. This rule is a guess. It assumes the biggest city is the one people most likely meant. That’s often reasonable, but here it’s problematic for two reasons:
 
@@ -336,7 +336,7 @@ Using `us.cities`, we were only able to attach coordinates to around 33% of the 
 
 **Q6.** What kinds of places does a modern list of big cities miss in a 1915 magazine?
 
-> 
+> Places that were big back then but aren't anymore. The only good example I can think of at the moment is Gary, Indiana.
 
 Now let's map it. Each point is a city, and its size shows how many times the magazine named it:
 
@@ -369,7 +369,7 @@ write_csv(places, "output/exercise6/amcity_places.csv")
 
 **Q7.** Describe the geography on your map. Where is it dense, where is it empty? *The American City* was published in New York for city officials across the country: how much of what you see is the magazine's readership, and how much is where it was made (the masthead, its advertisers' addresses)? Compare with Blevins's finding about Houston: does this look like a national geography or a regional one?
 
-> 
+> It's very empty in the western areas of the country and very dense in New England and the Midwest.A lot of it is where it was made but you can see the readership within it. It looks like a regional one.
 
 ------------------------------------------------------------------------
 
@@ -440,11 +440,11 @@ directory_names %>%
 
 **Q8-A.** Look at the `ORG` list above. Which employers did the model find, and what did it get wrong? Find at least three examples of mislabeled entities and three examples of correctly identified organizations.
 
-> 
+> Correct: Indiana General Service Co, Matic Oil Burners, Banner Furniture Co. Wrong: S, Av, M.
 
 **Q8-B.** Then think back to Exercise 1: for a city directory, would you rather use your own hand transcription (like you did in E1, Part 2), or this pre-trained NER model?
 
-> 
+> I think I would rather use my hand transcription simply because it seems more accurate.
 
 ------------------------------------------------------------------------
 
@@ -513,7 +513,7 @@ addresses %>% filter(is.na(street)) %>% select(entry, address)
 
 **Q9.** Look at the addresses Chunk 20-A dropped. Pick two or three of them and say what kind of place each one is (a hotel? another town? a garbled OCR line?). Do you think the people we lose at this step are a random sample of the directory, or are some kinds of people more likely to disappear? Explain in two or three sentences.
 
-> 
+> Curtis Chas. res. 2421 S. P l um (hotel I think?). Curtis Geo . B . president, 'rl1e Miller Shoe Co. 311 S. Walnut, res. East St. Louis CURTIS & GUBBINS, ( Ernest M. C. & John F. G.), Street and Road Con tractors ; also Proprieto rs City Coal Yards, Office and Yards, 606 S. Elm, Phone 313	(Jumbled mess). I think it is a random sample of the directory. I think this because this is a coding system. Unless something was deliberately put into the orignal document to exclude these people there is no reason it would exclude a specific group.
 
 Now, let's pass the addresses we have to the U.S. Census geocoder. Chunk 21 sends all the distinct addresses to the Census Bureau in one batch and saves the answer with latitude and longitude values, so you only send them once.
 
@@ -573,7 +573,7 @@ geocoded %>%
 
 **Q10.** Muncie has renamed and renumbered streets since 1925, and some 1925 blocks no longer exist. How could you check whether "1300 Butler St" in 1925 is the same spot as 1300 Butler St today? (Name a source, not a method in R.)
 
-> 
+> You could go on to google and look and see if the two places are the same.
 
 Last step: join the coordinates back to the **people**, map them, and save the addresses that failed for our GIS lab visit next week. Each point is one directory entry. Orange points are entries the publisher marked with an asterisk.
 
@@ -616,7 +616,7 @@ residents %>%
 ```
 **Q11.** The map has no streets, river, or rail lines. What would you need to add before it could say anything about 1925 Muncie? Then go back to your answer to the last question of Exercise 1. Now that you've actually mapped the asterisk, what should a responsible version of this map include or explain before anyone sees it?
 
-> 
+> It would need at least the streets in place before we could say anything about 1925 Muncie. I think a responsible version of this map would note that it is 1925's Muncie and explain that what was going on was not supported.
 
 ------------------------------------------------------------------------
 
