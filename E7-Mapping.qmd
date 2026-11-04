@@ -1,8 +1,8 @@
 ---
 title: "Exercise 7: Mapping Muncie, 1925"
 subtitle: "Base layers, small multiples, and interactive maps in R"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "November 4, 2026"
 format:
   html:
     theme: cosmo
@@ -438,23 +438,23 @@ Over the last five exercises you've seen five kinds of visualizations: charts fr
 
 1.  **Source and row.** What is your main source, and what will one row of your data be (a person, a document, a page, a place, an event)?
 
-> 
+> My main source is the course lists within Ball State history. One row of my data will be location that is the topic of the class.
 
 2.  **Method.** Which method from E2–E7 fits your question best, and why? (If none fits, say what's missing.)
 
-> 
+> I think the method that fits my question best is place names counted from text. If the code can pick out the place names then I can more easily depict the topics of these classes.
 
 3.  **The visualization.** Describe one chart or map you could make: what goes on the x and y axes (or where on the map), and what color, size, or panels show.
 
-> 
+> I could make a map of the locations that were taught about in Ball State geography classes so the x and y will take you to where the classes were taught about. You could change the size of the points to show where was taught about more.
 
 4.  **What it hides.** What will this visualization leave out?
 
-> 
+> This would leave out the years of when each class was taught to see what may have been happening in the world to affect it.
 
 5.  **What's left to do.** What has to happen to your data before you can visualize it (transcribing, cleaning, coding categories, geocoding)? Can you do it by November 23? If not, what smaller version could you make?
 
-> 
+> I think I need to transcribe the data. I think this is doable due to the extent of the classes that were taught (There weren't a ton in certain years.)
 
 ------------------------------------------------------------------------
 
