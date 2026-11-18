@@ -1,8 +1,8 @@
 ---
 title: "Exercise 8: Final Project Lab"
 subtitle: "Exploring your own project data with this semester's methods"
-author: ""
-date: ""
+author: "Jordan Huneryager"
+date: "November 16, 2026"
 format:
   html:
     theme: cosmo
@@ -70,15 +70,15 @@ dir.create("output/exercise8", recursive = TRUE, showWarnings = FALSE)
 
 1. What is your research question, as it stands today?
 
->
+> What were the topics that Ball State University offered in their geography classrooms and why were they offering them at this specific time?
 
 2. What is your main source, and where did your data come from?
 
->
+> Main source is the course catalogs from the Ball State Digital Repository and my data came from there.
 
 3. What is **one row** of your data: a person, a document, a page, an article, an event, a place?
 
->
+> One class offered at Ball State
 
 ### Where your data is
 
@@ -109,18 +109,18 @@ These are the only lines you need to change for Parts 1–3. `my_folder` is your
 
 ```{r}
 # Chunk 2
-my_folder <- "data/REPLACE-ME"        # your folder: "data/" and your last name, e.g. "data/anglin"
-my_file   <- "REPLACE-ME.csv"         # your file in that folder, e.g. "sc-ads.csv": a .csv or .xlsx file, a folder of .txt files, or an IPUMS .xml codebook
+my_folder <- "data/Huneryager"        # your folder: "data/" and your last name, e.g. "data/anglin"
+my_file   <- "courses.csv"         # your file in that folder, e.g. "sc-ads.csv": a .csv or .xlsx file, a folder of .txt files, or an IPUMS .xml codebook
 my_data_path <- file.path(my_folder, my_file)
 
-category_column <- "REPLACE-ME"   # a column of categories (a type, a newspaper, a state, an occupation)
-date_column     <- "REPLACE-ME"   # a column with dates or years
+category_column <- "department"   # a column of categories (a type, a newspaper, a state, an occupation)
+date_column     <- "catalog_year"   # a column with dates or years
 number_column   <- "REPLACE-ME"   # a column of numbers (an age, a price, a count)
 
 # TRUE/FALSE switches the chunks below use to decide whether to run
 has_data     <- file.exists(my_data_path) || dir.exists(my_data_path)
-has_category <- has_data && category_column != "REPLACE-ME"
-has_date     <- has_data && date_column != "REPLACE-ME"
+has_category <- has_data && category_column != "TRUE"
+has_date     <- has_data && date_column != "TRUE"
 has_number   <- has_data && number_column != "REPLACE-ME"
 
 has_data
@@ -162,7 +162,7 @@ my_data
 
 **Q2.** Did R read your data the way you expected? Look at the column names and the first few rows. If something looks wrong (a header in the wrong row, an extra empty column, strange characters), describe it.
 
->
+> R did read my data the way I expected. Everything seems to line up correctly with the data.
 
 ------------------------------------------------------------------------
 
@@ -225,7 +225,7 @@ my_data %>% count(.data[[category_column]], sort = TRUE)
 
 **Q3.** Name one **landmark**: a number you know from outside your data (from your sources, your Close Reading, or a secondary source) that your data should match. Does it?
 
->
+> The earliest year is 1970 and it does match.
 
 ### Basic exploratory charts
 
@@ -294,7 +294,7 @@ If `summary()` shows many `NA's`, some values in that column aren't numbers ("ab
 
 **Q4.** Look at your charts. What surprised you? Which chart would you want to improve for your Data Visualization assignment, and how?
 
->
+> The drop that happened in 1988 in the amount of courses offered surprised me. I might want to improve the departments chart so it is easier to read.
 
 ------------------------------------------------------------------------
 
@@ -304,7 +304,7 @@ Chambers's title is a claim, "The Gun Problem We Don't Mention," and every chart
 
 **Q5.** Write your claim as one sentence: something about your research question that your data might show. It doesn't have to be true yet. That's what the chart is for.
 
->
+> Which courses are geography
 
 Fill in the settings in Chunk 11:
 
@@ -333,7 +333,7 @@ Some settings to try, by workspace. They're a place to start, not the answer: yo
 
 ```{r}
 # Chunk 11
-claim_title <- "REPLACE-ME"   # your claim from Q5
+claim_title <- "Which courses are geography"   # your claim from Q5
 measure     <- "percent"      # "count" or "percent"
 over_time   <- TRUE           # TRUE: lines across the years (needs a date_column); FALSE: bars
 top_n       <- 5              # how many categories to show; the rest become "Other"
@@ -341,11 +341,11 @@ source_note <- "REPLACE-ME"   # e.g. "Source: Freedom on the Move, South Carolin
 
 # optional
 panel_column  <- "REPLACE-ME"   # one small chart for each value of this column
-search_column <- "REPLACE-ME"   # a column of text to search...
-search_words  <- "REPLACE-ME"   # ...for these words, e.g. "insane|lunatic"
+search_column <- "department"   # a column of text to search...
+search_words  <- "GEOG"   # ...for these words, e.g. "insane|lunatic"
 
 # switches for Chunk 12
-has_search <- has_data && search_column != "REPLACE-ME" && search_words != "REPLACE-ME"
+has_search <- has_data && search_column != "department" && search_words != "GEOG"
 has_panel  <- has_data && panel_column != "REPLACE-ME"
 use_years  <- has_date && over_time
 has_claim  <- (has_category || has_search) && claim_title != "REPLACE-ME"
@@ -445,7 +445,7 @@ argument_chart
 
 **Q6.** Does the chart support your claim? If it doesn't, what does it show instead? Don't fix it yet: your partner gets to see it first.
 
->
+> No it doesn't. It shows the information for a different department.
 
 ### Swap with your partner
 
@@ -463,7 +463,7 @@ Trade laptops. Look at your partner's chart **before** you read their code or th
 
 **Q8.** Trade back. What will you change in your chart, your claim, or your data because of what your partner wrote?
 
->
+> My Data.
 
 ------------------------------------------------------------------------
 
@@ -480,15 +480,15 @@ Turn on the part(s) you choose by changing `FALSE` to `TRUE` below, and fill in 
 
 ```{r}
 # Chunk 13
-do_tfidf  <- FALSE   # Part A
+do_tfidf  <- TRUE   # Part A
 do_topics <- FALSE   # Part B
 do_ner    <- FALSE   # Part C
-do_map    <- FALSE   # Part D
+do_map    <- TRUE   # Part D
 
 # ---- text settings (Parts A, B, C) ----
 text_column  <- "text"      # the column with your text ("text" if you read a folder of .txt files)
 doc_column   <- "doc_id"    # a column that identifies each document
-group_column <- "REPLACE-ME"   # for Part A: a column that groups documents (a year, a newspaper)
+group_column <- "department"   # for Part A: a column that groups documents (a year, a newspaper)
 my_stopwords <- c("REPLACE-ME")   # junk words to drop: OCR fragments, words in every document
 
 # switches for the chunks below
@@ -500,7 +500,7 @@ run_ner    <- has_text && do_ner
 
 **Q9.** Which part(s) did you choose, and why do they fit your question?
 
->
+>tfdif because it can help find the department rows I want. Map because it can show where the classes are located.
 
 ### Prepare your text (Parts A–C)
 
@@ -512,7 +512,7 @@ Chunk 14 makes `docs`, one row per document, and `words`, one row per word, clea
 docs <- my_data %>%
   transmute(doc_id = as.character(.data[[doc_column]]),
             text   = as.character(.data[[text_column]]),
-            group  = if (group_column != "REPLACE-ME") as.character(.data[[group_column]]) else "all") %>%
+            group  = if (group_column != "department") as.character(.data[[group_column]]) else "all") %>%
   filter(!is.na(text))
 
 words <- docs %>%
@@ -528,7 +528,7 @@ words %>% count(word, sort = TRUE)
 
 **Q10.** Look at the most frequent words. Which should go in `my_stopwords`? Add them and run Chunk 14 again.
 
->
+>idk
 
 ------------------------------------------------------------------------
 
@@ -844,7 +844,7 @@ unlink("output/exercise8/map_files", recursive = TRUE)
 
 **Q11.** Make a short decision log, like the one in E5: at least **four** decisions you made today (a setting, a stopword, a category, the number of topics, a geocoder). For each, one sentence on what it might hide or distort.
 
->
+> 
 
 **Q12.** Which chart or map from today, including your argument chart from Part 4, is closest to what you want for your **Data Visualization & Preliminary Analysis**? What would it take to finish it?
 
